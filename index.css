@@ -1,0 +1,23 @@
+body{
+    font-family: comic-sns;
+}
+
+h1{
+    font-size: 75px;
+    font-weight: 400;
+    margin: 0;
+}
+p{
+    font-size: 25px;
+
+
+}
+textarea{
+   
+    width: 200px;
+    height: 70px;
+}
+div input{
+    height: 25px;
+
+}
