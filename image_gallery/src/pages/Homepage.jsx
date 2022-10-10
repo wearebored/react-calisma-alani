@@ -1,4 +1,5 @@
-import Veri from "../components/Picture"
+import Veri from "../components/Picture";
+import data from "../helper/data";
 function Header() {
   return (
     <header>
@@ -9,7 +10,9 @@ function Header() {
 function Main() {
   return (
     <main>
-      {Veri()}
+      {data.map((a, i) => (
+        <Veri key={i} resim={a.src.large} yazi={a.photographer} />
+      ))}
     </main>
   );
 }
