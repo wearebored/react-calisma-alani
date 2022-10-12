@@ -47,10 +47,4 @@ img:hover {
   font-size: 1.2rem;
   color: rgb(56, 94, 151);
 }
-.yazı2 {
-  display: flex;
-  justify-content: space-between;
-  padding: 0.5rem;
-  font-size: 1.2rem;
-  color: rgb(56, 94, 151);
-}
+
