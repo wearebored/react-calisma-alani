@@ -4,7 +4,6 @@ import Button from "./components/button/button";
 import Input from "./components/input/input";
 import Output from "./components/output/output";
 
-import Palind from "./components/palindromik/palind";
 function App() {
   
   return (
