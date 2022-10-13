@@ -29,8 +29,6 @@ function Perfect(a, b) {
     }
   }
   arasinda.pop();
-  console.log("object");
-  console.log(arasinda);
   return arasinda;
 }
 export default Perfect;

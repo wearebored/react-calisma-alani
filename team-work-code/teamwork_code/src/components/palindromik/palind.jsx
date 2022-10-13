@@ -13,7 +13,6 @@ function Palind(a, b) {
     }
   }
   cikti.pop();
-  console.log(cikti);
-  return cikti;
+   return cikti;
 }
 export default Palind;
