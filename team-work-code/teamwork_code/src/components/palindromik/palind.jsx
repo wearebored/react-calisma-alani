@@ -7,10 +7,12 @@ function Palind(a, b) {
     liste.push(i);
   }
   for (let i of liste) {
-    if (i == i.toString().split("").reverse().join("")) {
+    if (i.toString() === i.toString().split("").reverse().join("")) {
       cikti.push(i);
+      cikti.push("\n");
     }
   }
+  cikti.pop();
   console.log(cikti);
   return cikti;
 }

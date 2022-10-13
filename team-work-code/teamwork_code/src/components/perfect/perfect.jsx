@@ -25,8 +25,10 @@ function Perfect(a, b) {
   for (let i of liste) {
     if (i >= ilksayi && i <= ikincisayi) {
       arasinda.push(i);
+      arasinda.push("\n");
     }
   }
+  arasinda.pop();
   console.log("object");
   console.log(arasinda);
   return arasinda;

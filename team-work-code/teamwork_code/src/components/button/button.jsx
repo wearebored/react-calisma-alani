@@ -1,23 +1,32 @@
-// import Palind from "../palindromik/palind";
+import Palind from "../palindromik/palind";
+import Perfect from "../perfect/perfect";
 function Button() {
-  // function buttonb(){
-  //   const ilk=document.querySelector("#girdi1").value
-  //   const ikin=document.querySelector("#girdi2").value
-  //   console.log(ilk);
-  //   console.log(ikin);
-  //   console.log(Palind(ilk, ikin));
-  //   document.querySelector("#cikti1").value = Palind(ilk, ikin);
-
-  // }
-  function buttond(a) {
-    console.log(a);
+  function button1() {
+    const ilk = document.querySelector("#girdi1").value;
+    const ikin = document.querySelector("#girdi2").value;
+    document.querySelector("#cikti1").value = "";
+    for (let i of Palind(ilk, ikin).reverse()) {
+      document.querySelector("#cikti1").value += i;
+    }
   }
+  function button2() {
+    const ilk = document.querySelector("#girdi1").value;
+    const ikin = document.querySelector("#girdi2").value;
+    document.querySelector("#cikti2").value = "";
+    for (let i of Perfect(ilk, ikin).reverse()) {
+      document.querySelector("#cikti2").value += i;
+    }
+  }
+
+
   return (
     <div>
-      <button onClick={buttond} id="buton1">
+      <button onClick={button1} id="buton1">
         List Palindrome
       </button>
-      <button id="buton2">List Perfect Number</button>
+      <button onClick={button2} id="buton2">
+        List Perfect Number
+      </button>
     </div>
   );
 }
