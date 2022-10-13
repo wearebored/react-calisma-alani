@@ -1,10 +1,10 @@
 // import Perfect from "./companent/perfect/perfect"
 
-import Button from "./companent/button/button";
-import Input from "./companent/input/input";
-import Output from "./companent/output/output";
+import Button from "./components/button/button";
+import Input from "./components/input/input";
+import Output from "./components/output/output";
 
-import Palind from "./companent/palindromik/palind";
+import Palind from "./components/palindromik/palind";
 function App() {
   
   return (
