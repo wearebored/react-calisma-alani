@@ -1,21 +1,25 @@
-import React from "react";
+import React, { useState } from "react";
 
 function Card({ data }) {
   const { name, img, options } = data;
+const [remove,setRemove]=useState(true)
+const degistir=()=>{
+    setRemove(!remove)
 
-  if (false) {
+}
+  if (remove) {
     return (
-      <div className="imgs">
+      <div onClick={degistir} className="imgs">
         <img src={img} alt="" />
         <p>{name}</p>
       </div>
     );
   } else {
     return (
-      <div>
+      <div onClick={degistir}>
         <ul>
           {options.map((e) => (
-            <li>{e}</li>
+            <li key={e}>{e}</li>
           ))}
         </ul>
       </div>
