@@ -1,12 +1,12 @@
 import React, { useState } from "react";
+import "./Card.scss";
 
 function Card({ data }) {
   const { name, img, options } = data;
-const [change, setChange] = useState(true);
-const degistir=()=>{
+  const [change, setChange] = useState(true);
+  const degistir = () => {
     setChange(!change);
-
-}
+  };
   if (change) {
     return (
       <div onClick={degistir} className="imgs">
@@ -16,7 +16,7 @@ const degistir=()=>{
     );
   } else {
     return (
-      <div onClick={degistir}>
+      <div onClick={degistir} className="text">
         <ul>
           {options.map((e) => (
             <li key={e}>{e}</li>
