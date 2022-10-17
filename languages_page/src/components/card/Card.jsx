@@ -2,12 +2,12 @@ import React, { useState } from "react";
 
 function Card({ data }) {
   const { name, img, options } = data;
-const [remove,setRemove]=useState(true)
+const [change, setChange] = useState(true);
 const degistir=()=>{
-    setRemove(!remove)
+    setChange(!change);
 
 }
-  if (remove) {
+  if (change) {
     return (
       <div onClick={degistir} className="imgs">
         <img src={img} alt="" />
