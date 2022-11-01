@@ -1,6 +1,7 @@
 import { useState } from "react";
-import data from "../../helper/data";
-function Header({ data1, setData }) {
+import { data } from "../../helper/data";
+import "./header.scss";
+function Header({ setDataa, data1 }) {
   const [button, setButton] = useState(true);
   const [value1, setValue1] = useState("");
   const [value2, setValue2] = useState("");
@@ -12,22 +13,15 @@ function Header({ data1, setData }) {
   const clickSubmit = (e) => {
     e.preventDefault();
     if (value1 && value2) {
-      //   data.push({
-      //     id: new Date().valueOf(),
-      //     task: value1,
-      //     time: value2,
-      //   });
-
       data.push({
         id: new Date().valueOf(),
         task: value1,
         time: value2,
       });
-      setData(data);
+      setDataa((data1 += 1));
     }
     setValue1("");
     setValue2("");
-    console.log(data);
   };
   //   ---------------
   const value1Change = (e) => {
@@ -40,14 +34,18 @@ function Header({ data1, setData }) {
   //   ---------------
   if (button) {
     return (
-      <div>
-        <button onClick={clickButton}>Show Add Task Bar</button>
+      <div className="header">
+        <button className="showbar" onClick={clickButton}>
+          Show Add Task Bar
+        </button>
       </div>
     );
   } else {
     return (
-      <div>
-        <button onClick={clickButton}>Close Add Task Bar</button>
+      <div className="header">
+        <button className="closebar" onClick={clickButton}>
+          Close Add Task Bar
+        </button>
         <form action="addtask">
           <label htmlFor="task">Task</label>
           <br />

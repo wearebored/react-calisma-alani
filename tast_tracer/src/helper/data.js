@@ -1,3 +1,2 @@
-let data = [];
+export const data = [];
 
-export default data;

@@ -1,0 +1,23 @@
+@import "./sass/reset.scss";
+body {
+  background-image: url("./img/task-list.webp");
+  background-size: cover;
+
+  .App {
+    .container {
+      margin: auto;
+      margin-top: 3rem;
+      width: 400px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-color: rgba(0, 0, 0, 0.637);
+      border-radius: 2rem;
+      h1 {
+        font-size: 3rem;
+        margin: 2rem;
+        color: white;
+      }
+    }
+  }
+}
