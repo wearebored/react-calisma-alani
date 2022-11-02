@@ -28,11 +28,15 @@ function Header({ setDataa, data1 }) {
   };
   //   ---------------
   const value1Change = (e) => {
-    setValue1(e.target.value);
+    setValue1(
+      e.target.value[0].toUpperCase() + e.target.value.slice(1).toLowerCase()
+    );
   };
   //   ---------------
   const value2Change = (e) => {
-    setValue2(e.target.value);
+    setValue2(
+      e.target.value[0].toUpperCase() + e.target.value.slice(1).toLowerCase()
+    );
   };
   //   ---------------
   if (button) {
