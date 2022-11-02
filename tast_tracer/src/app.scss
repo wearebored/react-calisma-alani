@@ -1,13 +1,16 @@
 @import "./sass/reset.scss";
 body {
   background-image: url("./img/task-list.webp");
-  background-size: cover;
+  background-repeat: repeat-y;
+  background-position-x: center;
+  background-color: rgb(30, 184, 203);
+  // background-size: cover;
 
   .App {
     .container {
       margin: auto;
       margin-top: 3rem;
-      width: 400px;
+      width: 500px;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -19,5 +22,12 @@ body {
         color: white;
       }
     }
+    @media (max-width: 580px) {
+    .container {
+      width: 400px;
+      
+    }
+}
   }
 }
+
