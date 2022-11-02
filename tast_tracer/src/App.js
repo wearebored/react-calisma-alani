@@ -7,7 +7,7 @@ function App() {
   return (
     <div className="App">
       <div className="container">
-        <h1>Task Tracer</h1>
+        <h1>Task Tracker</h1>
         <Header setDataa={setDataa} data1={data1} />
         <AddTask setDataa={setDataa} data1={data1} />
       </div>
