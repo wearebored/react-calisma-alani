@@ -10,7 +10,11 @@
   .veri {
     width: 100%;
     margin: 0.8rem;
-    
+    div {
+      width: 16rem;
+      text-overflow: ellipsis;
+      overflow: hidden;
+    }
   }
   button {
     width: 2rem;

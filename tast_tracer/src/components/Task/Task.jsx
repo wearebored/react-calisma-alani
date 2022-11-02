@@ -26,15 +26,14 @@ function Task({ a, setDataa, data1 }) {
         style={{
           // backgroundColor: "red",
           width: width ? "0px" : "10px",
-          
         }}
       ></div>
       <div className="veri">
         <div
           style={{
             textDecoration: width ? "none" : "line-through",
-            fontWeight:700,
-            fontSize:"1.2rem"
+            fontWeight: 700,
+            fontSize: "1.2rem",
           }}
         >
           {a.task}
