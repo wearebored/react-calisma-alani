@@ -1,5 +1,5 @@
 function Card({ userdata }) {
-  console.log(userdata);
+
 //   let registereDate = new Date(Date.parse(userdata.registered?.date));
   
   return (
