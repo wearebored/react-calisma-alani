@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import Card from "../Card/Card";
+import "./header.scss";
 
 function Header() {
   const [userdata, setUserdata] = useState("");
@@ -14,7 +15,6 @@ function Header() {
       const veri = await axios.get(url);
       if (veri.status === 200) {
         setUserdata(veri.data.results[0]);
-        
       } else {
         // throw "veri hatalı geldi";
       }
@@ -27,7 +27,7 @@ function Header() {
   };
 
   return (
-    <div>
+    <div className="header">
       <Card userdata={userdata} />
       <button onClick={randomClick}>Random User</button>
     </div>

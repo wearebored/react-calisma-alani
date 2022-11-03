@@ -15,9 +15,10 @@ Project is an application that gives random user information.
 - JS
 
 - ReactJS
+  - Axios, get
   - useState
-  - useRef
-  - .map, push
+  - useEffect
+  - .map
   - props
 
 <!-- ## Github-pages -->
@@ -28,7 +29,7 @@ Project is an application that gives random user information.
 
 ## Preview
 
-![ Project Snapshot ](tasktracker.gif)
+![ Project Snapshot ](randomuser.gif)
 
 ## Project Skeleton
 
@@ -36,16 +37,27 @@ Project is an application that gives random user information.
 Random User App (folder)
 |
 ├── public
+|     |
 │     └── index.html
 |
 ├── src
-│    ├── assets.js
-│    │       └── [images]
-|    |
+│    ├── components
+|    │       |
+|    │       ├── Header
+|    │       |     ├── Header.jsx
+|    │       |     └── header.scss
+|    │       |
+|    │       └── Card
+|    │             ├── Card.jsx
+|    │             └── card.scss
+|    │
+|    ├── sass
+|    |       ├── reset.scss
+|    │       └── veriables.scss
+│    │
 │    ├── App.js
-│    ├── App.css
-│    ├── index.js
-│    └── index.css
+│    ├── app.scss
+│    └── index.js
 |
 ├── package.json
 ├── yarn.lock

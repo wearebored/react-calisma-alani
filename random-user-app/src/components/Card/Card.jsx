@@ -1,9 +1,7 @@
+import "./card.scss";
 function Card({ userdata }) {
-
-//   let registereDate = new Date(Date.parse(userdata.registered?.date));
-  
   return (
-    <div>
+    <div className="card">
       <div className="picturename">
         <img src={userdata.picture?.large} alt={userdata.name?.last} />
         <p>
@@ -30,15 +28,7 @@ function Card({ userdata }) {
         <p>Age:{userdata.dob?.age}</p>
       </div>
       <div className="date">
-        <p>
-          {/* Register Date:
-          {registereDate.getFullYear() +
-            "-" +
-            (registereDate.getMonth() + 1) +
-            "-" +
-            registereDate.getDate()} */}
-          Register Date:{userdata.registered?.date.slice(0,10)}
-        </p>
+        <p>Register Date:{userdata.registered?.date.slice(0, 10)}</p>
       </div>
     </div>
   );

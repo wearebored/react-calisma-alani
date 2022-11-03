@@ -1,0 +1,44 @@
+.card {
+  width: 35rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  background-image: url("./defter2.png");
+  background-size: cover;
+  padding: 5rem;
+
+  .picturename {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    img {
+      border-radius: 50%;
+      border: solid 0.8rem rgb(255, 255, 255);
+      box-shadow: 0 0 12px;
+    }
+    p {
+      text-align: center;
+      margin-top: 1rem;
+      font-size: 2rem;
+    }
+  }
+  div {
+    transform: translateY(-0.13rem);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .fa-solid {
+    margin: 2rem 0 0.5rem 0;
+    font-size: 2rem;
+    text-shadow: 0 0 2px;
+  }
+  .age {
+    margin: 2rem;
+  }
+  p {
+    text-shadow: 0 0 1px;
+    font-size: 1.1rem;
+  }
+}
