@@ -1,12 +1,11 @@
 import { useRef, useState } from "react";
-import { data } from "../../helper/data";
 import "./header.scss";
 function Header({ setDataa, data1 }) {
   const [button, setButton] = useState(true);
   const [value1, setValue1] = useState("");
   const [value2, setValue2] = useState("");
   const searchInput = useRef(null);
-  
+
   const clickButton = () => {
     setButton(!button);
   };
@@ -14,17 +13,19 @@ function Header({ setDataa, data1 }) {
   const clickSubmit = (e) => {
     e.preventDefault();
     if (value1 && value2) {
-      data.push({
-        id: new Date().valueOf(),
-        task: value1,
-        time: value2,
-      });
-      setDataa((data1 += 1));
+      setDataa([
+        ...data1,
+        {
+          id: new Date().valueOf(),
+          task: value1,
+          time: value2,
+        },
+      ]);
+      console.log(data1);
     }
     setValue1("");
     setValue2("");
     searchInput.current.focus();
-    
   };
   //   ---------------
   const value1Change = (e) => {

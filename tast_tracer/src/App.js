@@ -3,7 +3,7 @@ import AddTask from "./components/Addtask/AddTask";
 import Header from "./components/Header/Header";
 import "./app.scss";
 function App() {
-  const [data1, setDataa] = useState(0);
+  const [data1, setDataa] = useState([]);
   return (
     <div className="App">
       <div className="container">

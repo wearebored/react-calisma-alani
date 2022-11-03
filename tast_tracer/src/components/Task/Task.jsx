@@ -1,20 +1,20 @@
 import React, { useState } from "react";
-import { data } from "../../helper/data";
 import "./task.scss";
 function Task({ a, setDataa, data1 }) {
   const [width, setWidth] = useState(true);
 
   const taskDelete = (e) => {
     let counter = 0;
-    for (let i of data) {
+    for (let i of data1) {
       if (Number(i.id) === Number(e.target.className)) {
-        data.splice(counter, 1);
+        data1.splice(counter, 1);
         break;
       } else {
         counter++;
       }
     }
-    setDataa((data1 -= 1));
+    setDataa([...data1]);
+    
   };
   const taskOk = (e) => {
     setWidth(!width);
