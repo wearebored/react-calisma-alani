@@ -1,0 +1,65 @@
+.about {
+  .newsletter {
+    background-color: rgb(22, 22, 44);
+    height: 10vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10rem;
+    h3 {
+      color: white;
+    }
+    div {
+      input {
+        height: 2rem;
+        width: 15rem;
+        padding-left: 0.3rem;
+      }
+      button {
+        height: 2rem;
+        background-color: rgb(255, 81, 0);
+        border: solid rgb(255, 81, 0);
+        color: white;
+        padding: 0 1rem;
+      }
+      button:active {
+        height: 1.8rem;
+        background-color: rgb(214, 86, 27);
+        border: solid rgb(209, 80, 20);
+        color: white;
+        padding: 0 1rem;
+      }
+    }
+  }
+  .metin {
+    display: flex;
+    min-height: 64vh;
+    padding: 0 10rem;
+    gap: 4rem;
+    .aboutus {
+      
+        width: 65vw;
+      margin-top: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      .renkli {
+        background-color: rgb(42, 40, 65);
+        color: white;
+        padding: 0.8rem;
+      }
+    }
+    .wedo {
+        width: 35vw;
+      margin: 2rem 0;
+      div {
+        background-color: rgb(38, 37, 70);
+        color: white;
+        padding: 2rem 1rem;
+        display: flex;
+        flex-direction: column;
+        gap: 1.2rem;
+      }
+    }
+  }
+}
