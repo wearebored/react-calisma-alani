@@ -1,0 +1,43 @@
+.csspage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 74vh;
+  position: relative;
+  padding-bottom: 10vh;
+
+  img {
+    margin-top: 2rem;
+  }
+  h3 {
+    margin-top: 1rem;
+    font-weight: 900;
+  }
+  p {
+    margin-top: 2rem;
+    padding: 0 5rem;
+  }
+  .cssbutton {
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 10vh;
+    width: 100%;
+    button {
+      background-color: orangered;
+      padding: 0.6rem 1.2rem;
+      color: white;
+      border: solid 0px;
+      border-radius: 5px;
+    }
+    button:active {
+      background-color: orangered;
+      padding: 0.5rem 1.1rem;
+      color: white;
+      border: solid 0px;
+      border-radius: 5px;
+    }
+  }
+}

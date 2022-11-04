@@ -1,10 +1,11 @@
 import { useNavigate } from "react-router-dom";
 import "./card.scss";
-
+// const { e } = useParams();
 function Card({ e }) {
   const navigate = useNavigate();
   const cardClick = () => {
-    navigate(e.name);
+    navigate(e.name, { state: e });
+    
   };
   return (
     <div onClick={cardClick} className="card">

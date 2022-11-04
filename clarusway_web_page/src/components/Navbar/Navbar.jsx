@@ -1,4 +1,4 @@
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import "./navbar.scss";
 function Navbar() {
   return (
@@ -11,19 +11,37 @@ function Navbar() {
       <div>
         <ul>
           <li>
-            <Link className="link" to="/">
+            <NavLink
+              style={({ isActive }) => {
+                return { color: isActive ? "rgb(219, 80, 166)" : "" };
+              }}
+              className="link"
+              to="/"
+            >
               Home
-            </Link>
+            </NavLink>
           </li>
           <li>
-            <Link className="link" to="/about">
+            <NavLink
+              style={({ isActive }) => {
+                return { color: isActive ? "rgb(219, 80, 166)" : "" };
+              }}
+              className="link"
+              to="/about"
+            >
               About
-            </Link>
+            </NavLink>
           </li>
           <li>
-            <Link className="link" to="/services">
+            <NavLink
+              style={({ isActive }) => {
+                return { color: isActive ? "rgb(219, 80, 166)" : "" };
+              }}
+              className="link"
+              to="/services"
+            >
               Services
-            </Link>
+            </NavLink>
           </li>
         </ul>
       </div>
