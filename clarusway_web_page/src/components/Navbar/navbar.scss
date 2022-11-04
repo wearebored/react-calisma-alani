@@ -1,0 +1,32 @@
+nav {
+  background-color: rgb(41, 38, 38);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: solid 5px rgb(223, 70, 177);
+  div {
+    margin: 2rem 10rem;
+    h1 {
+      font-size: 2rem;
+      color: white;
+      span {
+        color: rgb(219, 80, 166);
+      }
+    }
+
+    ul {
+      display: flex;
+      gap: 3rem;
+      list-style-type: none;
+      color: white;
+
+      li {
+        font-size: 2rem;
+        .link {
+          text-decoration: none;
+          color: white;
+        }
+      }
+    }
+  }
+}

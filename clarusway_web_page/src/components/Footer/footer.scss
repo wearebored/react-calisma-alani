@@ -1,0 +1,14 @@
+footer {
+  background-color: rgb(42, 43, 51);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  padding-top: 2rem;
+  div {
+    img {
+      width: 13rem;
+    }
+  }
+}
