@@ -1,0 +1,61 @@
+main {
+  .design {
+    height: 40vh;
+    background-image: url("../../../public/images/showcase.jpg");
+    //   background-size: cover;
+    background-position: center;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    h2 {
+      color: white;
+      margin-top: 6rem;
+      font-size: 3rem;
+    }
+    p {
+      padding: 0 10rem;
+      margin: 2rem;
+      text-align: center;
+      line-height: 2rem;
+      font-size: 1.2rem;
+      color: white;
+    }
+  }
+  .subscribe {
+    height: 8vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10rem;
+    background-color: rgb(28, 25, 39);
+    h3 {
+      color: white;
+    }
+    input {
+      height: 2rem;
+      width: 15rem;
+      padding-left: 0.3rem;
+    }
+    button {
+      height: 2rem;
+      background-color: rgb(255, 81, 0);
+      border: solid rgb(255, 81, 0);
+      color: white;
+      padding: 0 1rem;
+    }
+    button:active {
+      height: 2.2rem;
+      background-color: rgb(214, 86, 27);
+      border: solid rgb(209, 80, 20);
+      color: white;
+      padding: 0 1rem;
+    }
+  }
+  .csslogohtml {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 8rem;
+  }
+}

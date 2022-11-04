@@ -1,0 +1,13 @@
+.card {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  img {
+    height: 10vh;
+  }
+  p {
+    text-align: center;
+  }
+}
