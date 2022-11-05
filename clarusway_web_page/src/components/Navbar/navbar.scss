@@ -3,7 +3,7 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: solid 5px rgb(223, 70, 177);
+  border-bottom: solid 3px rgb(223, 70, 177);
   div {
     margin: 2rem 10rem;
     h1 {
@@ -27,7 +27,26 @@ nav {
           color: white;
         }
       }
-      
     }
+  }
+}
+@media (max-width: 1320px) {
+  nav {
+    div {
+      margin: 2rem 4rem;
+    }
+  }
+}
+@media (max-width: 936px) {
+  nav {
+    div {
+      margin: 2rem 2rem;
+    }
+  }
+}
+@media (max-width: 808px) {
+  nav {
+    display: flex;
+    flex-direction: column;
   }
 }
