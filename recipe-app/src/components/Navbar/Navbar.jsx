@@ -1,32 +1,30 @@
 import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { LoginContext } from "../../context/LoginContext";
-import { NavbarContainer, Navbarh2, NavbarList } from "./navbar-styled";
+import { NavbarContainer, Navbarh2, NavbarLink, NavbarList } from "./navbar-styled";
 
 function Navbar() {
-  const { user, setUser} = useContext(LoginContext);
-  
- 
+  const { user, setUser } = useContext(LoginContext);
+
   return (
     <NavbarContainer>
-      <Link to="/about">
+      <NavbarLink to="/about">
         <Navbarh2>
           {"<ENES/> "} <span>RECIPE</span>
         </Navbarh2>
-      </Link>
+      </NavbarLink>
 
       <NavbarList>
-        <Link to="/about">ABOUT</Link>
-        <Link to="/github">GITHUB</Link>
-        <Link
+        <NavbarLink to="/about">ABOUT</NavbarLink>
+        <NavbarLink to="/github">GITHUB</NavbarLink>
+        <NavbarLink
           onClick={() => {
             setUser("");
-          
           }}
           to="/login"
         >
-          {user?"LOGOUT":"LOGIN"}
-        </Link>
+          {user ? "LOGOUT" : "LOGIN"}
+        </NavbarLink>
       </NavbarList>
     </NavbarContainer>
   );
