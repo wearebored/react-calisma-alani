@@ -1,16 +1,16 @@
-import { useState, useContext, useEffect } from "react";
-import { NavLink, useNavigate, Navigate } from "react-router-dom";
+import { useState, useContext } from "react";
+import {  useNavigate, Navigate } from "react-router-dom";
 import { LoginContext } from "../../context/LoginContext";
 import { register } from "../../firebase";
 
-function Singin() {
+function Signin() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const { user, setUser } = useContext(LoginContext);
   const [errors, setErrors] = useState("");
   const navigate = useNavigate();
 
-  const singinClick = async () => {
+  const signinClick = async () => {
     console.log(email);
     console.log(password);
     const regist = await register(email, password);
@@ -50,41 +50,11 @@ function Singin() {
             placeholder="Password"
           />
           <div style={{ height: "20px" }}>{errors ? errors : ""}</div>
-          <button onClick={singinClick}>Sing in</button>
+          <button onClick={signinClick}>SIGN IN</button>
         </div>
       </div>
     );
   }
 }
-//   return (
-//     <div>
-//       <div>
-//         <input
-//           onChange={(e) => {
-//             setEmail(e.target.value);
-//             setErrors("");
-//           }}
-//           type="text"
-//           name="email"
-//           id="email"
-//           placeholder="Email"
-//           value={email}
-//         />
-//         <input
-//           onChange={(e) => {
-//             setPassword(e.target.value);
-//             setErrors("");
-//           }}
-//           type="password"
-//           name="password"
-//           id="password"
-//           placeholder="Password"
-//         />
-//         <div style={{ height: "20px" }}>{errors ? errors : ""}</div>
-//         <button onClick={singinClick}>Sing in</button>
-//       </div>
-//     </div>
-//   );
-// }
 
-export default Singin;
+export default Signin;

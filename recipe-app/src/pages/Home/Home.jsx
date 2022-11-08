@@ -4,27 +4,30 @@ import { LoginContext } from "../../context/LoginContext";
 
 function Home() {
   const { user, setUser } = useContext(LoginContext);
+  console.log(user);
   return (
-    <div>
-      Home
+
       <div>
-        <NavLink to="/">HOME</NavLink>
-        <br />
-        <NavLink to="/login">LOGIN</NavLink>
-        <br />
-        <NavLink to="/about">ABOUT</NavLink>
+        Home
+        <div>
+          <NavLink to="/">HOME</NavLink>
+          <br />
+          <NavLink to="/login">LOGIN</NavLink>
+          <br />
+          <NavLink to="/about">ABOUT</NavLink>
+        </div>
+        <div>
+          <NavLink
+            onClick={() => {
+              setUser("");
+            }}
+            to="/login"
+          >
+            LOGOUT
+          </NavLink>
+        </div>
       </div>
-      <div>
-        <NavLink
-          onClick={() => {
-            setUser("");
-          }}
-          to="/login"
-        >
-          LOGOUT
-        </NavLink>
-      </div>
-    </div>
+    
   );
 }
 

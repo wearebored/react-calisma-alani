@@ -1,10 +1,11 @@
 import Login from "./pages/Login/Login";
 import { Route, BrowserRouter, Routes } from "react-router-dom";
 import Home from "./pages/Home/Home";
-import Singin from "./pages/Singin/Singin";
+import Signin from "./pages/Signin/Signin";
 import LoginProvider from "./context/LoginContext";
 import PrivateRouter from "./context/PrivateRouter";
 import About from "./pages/About/About";
+import "./app.css";
 
 function App() {
   return (
@@ -13,13 +14,13 @@ function App() {
         <BrowserRouter>
           <Routes>
             <Route path="/login" element={<Login />} />
-            <Route path="/singin" element={<Singin />} />
+            <Route path="/signin" element={<Signin />} />
             <Route path="/" element={<PrivateRouter />}>
               <Route path="/" element={<Home />} />
               <Route path="/about" element={<About />} />
             </Route>
 
-            {/* <Route path="/" element={<Home/>}/> */}
+            
           </Routes>
         </BrowserRouter>
       </LoginProvider>

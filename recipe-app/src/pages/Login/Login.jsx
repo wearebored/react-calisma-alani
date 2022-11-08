@@ -1,12 +1,19 @@
-import { async } from "@firebase/util";
 import { useContext, useState } from "react";
-import { Link, NavLink, Navigate, useNavigate } from "react-router-dom";
+import { NavLink, Navigate, useNavigate } from "react-router-dom";
+import {
+  BackgroundLogin,
+  Button,
+  Container,
+  H1,
+  Input,
+  LoginImage,
+} from "../../components/styled-components";
 import { LoginContext } from "../../context/LoginContext";
 import { login } from "../../firebase";
 function Login() {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const { user, setUser } = useContext(LoginContext);
-  const [errors,setErrors]=useState("")
+  const [errors, setErrors] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const loginClick = async () => {
@@ -18,18 +25,21 @@ function Login() {
       navigate("/");
     } else {
       setErrors(logindata);
+      console.log(errors);
     }
   };
-  
+
   if (user) {
     return <Navigate to="/" />;
   } else {
     return (
-      <div>
-        <div>
-          <img src="image/meal2.svg" alt="meal2" />
-          <h1>{"<ENES/> RECIPE"}</h1>
-          <input
+      <BackgroundLogin>
+        <Container>
+          <LoginImage src="image/meal2.svg" alt="meal2" />
+
+          <H1>{"<ENES/> RECIPE"}</H1>
+
+          <Input
             onChange={(e) => {
               setEmail(e.target.value);
             }}
@@ -37,8 +47,8 @@ function Login() {
             type="email"
             placeholder="EMAİL"
             id="email"
-          />
-          <input
+          ></Input>
+          <Input
             onChange={(e) => {
               setPassword(e.target.value);
             }}
@@ -46,20 +56,14 @@ function Login() {
             value={password}
             placeholder="PASSWORD"
             id="password"
-          />
-          <button onClick={loginClick}>LOGIN</button>
+          ></Input>
+          <Button onClick={loginClick}>LOGIN</Button>
 
-          <NavLink to="/singin">
-            <button>SING IN</button>
+          <NavLink to="/signin">
+            <Button>SING IN</Button>
           </NavLink>
-          <NavLink to="/">
-            <button>HOME</button>
-          </NavLink>
-          <NavLink to="/about">
-            <button>ABOUT</button>
-          </NavLink>
-        </div>
-      </div>
+        </Container>
+      </BackgroundLogin>
     );
   }
 }
