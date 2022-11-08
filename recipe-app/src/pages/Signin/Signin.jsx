@@ -1,5 +1,12 @@
 import { useState, useContext } from "react";
-import {  useNavigate, Navigate } from "react-router-dom";
+import { useNavigate, Navigate, NavLink } from "react-router-dom";
+import {
+  BackgroundLogin,
+  Button,
+  Container,
+  H1,
+  Input,
+} from "../../components/styled-components";
 import { LoginContext } from "../../context/LoginContext";
 import { register } from "../../firebase";
 
@@ -26,9 +33,11 @@ function Signin() {
     return <Navigate to="/" />;
   } else {
     return (
-      <div>
-        <div>
-          <input
+      <BackgroundLogin>
+        <Container>
+          <H1>{"<ENES/> RECIPE"}</H1>
+          <h2>SING IN</h2>
+          <Input
             onChange={(e) => {
               setEmail(e.target.value);
               setErrors("");
@@ -39,7 +48,7 @@ function Signin() {
             placeholder="Email"
             value={email}
           />
-          <input
+          <Input
             onChange={(e) => {
               setPassword(e.target.value);
               setErrors("");
@@ -49,10 +58,14 @@ function Signin() {
             id="password"
             placeholder="Password"
           />
-          <div style={{ height: "20px" }}>{errors ? errors : ""}</div>
-          <button onClick={signinClick}>SIGN IN</button>
-        </div>
-      </div>
+          <Button onClick={signinClick}>SIGN IN</Button>
+          {/* <div style={{ height: "20px" }}>{errors ? errors : ""}</div> */}
+          <hr style={{ width: "20rem" }} />
+          <NavLink to="/login">
+            <Button>LOGIN</Button>
+          </NavLink>
+        </Container>
+      </BackgroundLogin>
     );
   }
 }

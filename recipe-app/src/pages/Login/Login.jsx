@@ -30,6 +30,7 @@ function Login() {
   };
 
   if (user) {
+   
     return <Navigate to="/" />;
   } else {
     return (
@@ -47,7 +48,7 @@ function Login() {
             type="email"
             placeholder="EMAİL"
             id="email"
-          ></Input>
+          />
           <Input
             onChange={(e) => {
               setPassword(e.target.value);
@@ -56,11 +57,11 @@ function Login() {
             value={password}
             placeholder="PASSWORD"
             id="password"
-          ></Input>
+          />
           <Button onClick={loginClick}>LOGIN</Button>
-
+          <hr style={{ width: "20rem" }} />
           <NavLink to="/signin">
-            <Button>SING IN</Button>
+            <Button>SIGN IN</Button>
           </NavLink>
         </Container>
       </BackgroundLogin>

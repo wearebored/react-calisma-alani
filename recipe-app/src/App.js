@@ -6,21 +6,32 @@ import LoginProvider from "./context/LoginContext";
 import PrivateRouter from "./context/PrivateRouter";
 import About from "./pages/About/About";
 import "./app.css";
+import Github from "./pages/Github/Github";
+import Navbar from "./components/Navbar/Navbar";
+
 
 function App() {
+
+  
   return (
     <div className="App">
       <LoginProvider>
         <BrowserRouter>
+          <Navbar/>
           <Routes>
-            <Route path="/login" element={<Login />} />
-            <Route path="/signin" element={<Signin />} />
+            <Route
+              path="/login"
+              element={<Login />}
+            />
+            <Route
+              path="/signin"
+              element={<Signin />}
+            />
             <Route path="/" element={<PrivateRouter />}>
               <Route path="/" element={<Home />} />
               <Route path="/about" element={<About />} />
+              <Route path="/github" element={<Github />} />
             </Route>
-
-            
           </Routes>
         </BrowserRouter>
       </LoginProvider>
