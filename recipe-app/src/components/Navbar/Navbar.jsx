@@ -1,30 +1,51 @@
 import { useContext, useState } from "react";
-import { Link } from "react-router-dom";
+
 import { LoginContext } from "../../context/LoginContext";
-import { NavbarContainer, Navbarh2, NavbarLink, NavbarList } from "./navbar-styled";
+import {
+  LinkDiv,
+  Menu,
+  NavbarContainer,
+  NavbarContainer2,
+  Navbarh2,
+  NavbarLink,
+  NavbarList,
+} from "./navbar-styled";
 
 function Navbar() {
-  const { user, setUser } = useContext(LoginContext);
+  const { user, setUser, maxwidth, setMaxwidth } = useContext(LoginContext);
 
   return (
     <NavbarContainer>
-      <NavbarLink to="/about">
-        <Navbarh2>
-          {"<ENES/> "} <span>RECIPE</span>
-        </Navbarh2>
-      </NavbarLink>
-
-      <NavbarList>
-        <NavbarLink to="/about">ABOUT</NavbarLink>
-        <NavbarLink to="/github">GITHUB</NavbarLink>
-        <NavbarLink
-          onClick={() => {
-            setUser("");
-          }}
-          to="/login"
-        >
-          {user ? "LOGOUT" : "LOGIN"}
+      <NavbarContainer2>
+        <NavbarLink to="/about">
+          <Navbarh2>
+            {"<ENES/> "} <span>RECIPE</span>
+          </Navbarh2>
         </NavbarLink>
+        <Menu
+          onClick={() => {
+            setMaxwidth(!maxwidth);
+          }}
+        ></Menu>
+      </NavbarContainer2>
+
+      <NavbarList maxwidth={maxwidth}>
+        <LinkDiv>
+          <NavbarLink to="/about">ABOUT</NavbarLink>
+        </LinkDiv>
+        <LinkDiv>
+          <NavbarLink to="/github">GITHUB</NavbarLink>
+        </LinkDiv>
+        <LinkDiv>
+          <NavbarLink
+            onClick={() => {
+              setUser("");
+            }}
+            to="/login"
+          >
+            {user ? "LOGOUT" : "LOGIN"}
+          </NavbarLink>
+        </LinkDiv>
       </NavbarList>
     </NavbarContainer>
   );

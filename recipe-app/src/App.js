@@ -9,24 +9,15 @@ import "./app.css";
 import Github from "./pages/Github/Github";
 import Navbar from "./components/Navbar/Navbar";
 
-
 function App() {
-
-  
   return (
     <div className="App">
       <LoginProvider>
         <BrowserRouter>
-          <Navbar/>
+          <Navbar />
           <Routes>
-            <Route
-              path="/login"
-              element={<Login />}
-            />
-            <Route
-              path="/signin"
-              element={<Signin />}
-            />
+            <Route path="/login" element={<Login />} />
+            <Route path="/signin" element={<Signin />} />
             <Route path="/" element={<PrivateRouter />}>
               <Route path="/" element={<Home />} />
               <Route path="/about" element={<About />} />
