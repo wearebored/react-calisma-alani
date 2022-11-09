@@ -9,14 +9,14 @@ export const NavbarContainer = styled.div`
   justify-content: space-between;
 
   width: 100vw;
-  @media (max-width: 800px) {
+  @media (max-width: 1000px) {
     display: flex;
     align-items: center;
 
     flex-direction: column;
   }
 
-  background-color: #c71515;
+  background-color: #e6fdfd;
 `;
 export const NavbarContainer2 = styled.div`
   height: 10vh;
@@ -25,20 +25,20 @@ export const NavbarContainer2 = styled.div`
   justify-content: space-between;
   width: 100vw;
 
-  background-color: #c71515;
+  background-color: #e6fdfd;
 `;
 export const Navbarh2 = styled.h2`
-  color: #ffffff;
+  color: #1f1414;
   margin-left: 2rem;
   span {
-    color: royalblue;
+    color: #2ca8da;
   }
 `;
 export const NavbarList = styled.ul`
   margin-right: 2rem;
   display: flex;
 
-  @media (max-width: 800px) {
+  @media (max-width: 1000px) {
     display: ${(props) => (props.maxwidth ? "none" : "flex")};
 
     align-items: center;
@@ -48,7 +48,13 @@ export const NavbarList = styled.ul`
 `;
 export const LinkDiv = styled.div`
   padding: 1rem;
-  @media (max-width: 800px) {
+  a {
+    color: #085866;
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+  @media (max-width: 1000px) {
     padding: 1rem;
     width: 80vw;
     border-top: solid 1px;
@@ -58,16 +64,18 @@ export const LinkDiv = styled.div`
   }
 `;
 export const NavbarLink = styled(Link)`
-  color: white;
+  color: #085866;
   text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: 700;
 `;
 export const Menu = styled(GiHamburgerMenu)`
   height: 2rem;
   width: 2rem;
   display: none;
-  color: white;
+  color: #085866;
   margin-right: 2rem;
-  @media (max-width: 800px) {
+  @media (max-width: 1000px) {
     display: block;
   }
   h1 {

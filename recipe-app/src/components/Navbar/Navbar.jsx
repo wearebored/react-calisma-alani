@@ -17,9 +17,14 @@ function Navbar() {
   return (
     <NavbarContainer>
       <NavbarContainer2>
-        <NavbarLink to="/about">
+        <NavbarLink
+          onClick={() => {
+            setMaxwidth(true);
+          }}
+          to="/"
+        >
           <Navbarh2>
-            {"<ENES/> "} <span>RECIPE</span>
+            {"<WeAreBored/> "} <span>RECIPE</span>
           </Navbarh2>
         </NavbarLink>
         <Menu
@@ -31,15 +36,40 @@ function Navbar() {
 
       <NavbarList maxwidth={maxwidth}>
         <LinkDiv>
-          <NavbarLink to="/about">ABOUT</NavbarLink>
+          <NavbarLink
+            onClick={() => {
+              setMaxwidth(true);
+            }}
+            to="/about"
+          >
+            ABOUT
+          </NavbarLink>
         </LinkDiv>
         <LinkDiv>
-          <NavbarLink to="/github">GITHUB</NavbarLink>
+          {/* <NavbarLink
+            onClick={() => {
+              setMaxwidth(true);
+            }}
+            // to=""
+          >
+            GITHUB
+          </NavbarLink> */}
+          {/* <a href="https://github.com/wearebored"></a> */}
+
+          <a
+            onClick={() => {
+              setMaxwidth(true);
+            }}
+            href="https://github.com/wearebored"
+          >
+            GITHUB
+          </a>
         </LinkDiv>
         <LinkDiv>
           <NavbarLink
             onClick={() => {
               setUser("");
+              setMaxwidth(true);
             }}
             to="/login"
           >

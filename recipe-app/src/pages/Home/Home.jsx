@@ -3,6 +3,7 @@ import { NavLink } from "react-router-dom";
 import { LoginContext } from "../../context/LoginContext";
 
 function Home() {
+  const { maxwidth, setMaxwidth } = useContext(LoginContext);
   const { user, setUser } = useContext(LoginContext);
   console.log(user);
   return (

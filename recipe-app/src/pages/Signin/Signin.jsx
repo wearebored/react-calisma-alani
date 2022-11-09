@@ -11,6 +11,7 @@ import { LoginContext } from "../../context/LoginContext";
 import { register } from "../../firebase";
 
 function Signin() {
+  const { maxwidth, setMaxwidth } = useContext(LoginContext);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const { user, setUser } = useContext(LoginContext);
