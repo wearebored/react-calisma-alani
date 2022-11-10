@@ -8,7 +8,7 @@ export const NavbarContainer = styled.div`
   align-items: center;
   justify-content: space-between;
 
-  width: 100vw;
+  
   @media (max-width: 1000px) {
     display: flex;
     align-items: center;

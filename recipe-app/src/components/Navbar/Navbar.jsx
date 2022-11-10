@@ -56,7 +56,7 @@ function Navbar() {
           </NavbarLink> */}
           {/* <a href="https://github.com/wearebored"></a> */}
 
-          <a
+          <a target="_blank"
             onClick={() => {
               setMaxwidth(true);
             }}
