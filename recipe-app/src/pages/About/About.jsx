@@ -19,7 +19,11 @@ function About() {
         <p>I'm currently learning full-stack development languages.</p>
         <p>I've already known JS, ReactJS, React Native, Node MYSQL,Python.</p>
 
-        <a target="_blank" href="https://www.linkedin.com/in/enes-goktas/">
+        <a
+          target="_blank"
+          rel="noreferrer"
+          href="https://www.linkedin.com/in/enes-goktas/"
+        >
           <Linkedln />
         </a>
       </Paragraf>

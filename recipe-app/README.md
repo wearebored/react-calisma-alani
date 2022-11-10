@@ -35,7 +35,7 @@ Recipe App created with the Router method.
 
 ## Pages
 
-[ Project Website ](https://delicate-cheesecake-7f6f1c.netlify.app/)
+[ Project Website ](https://kaleidoscopic-crostata-8c0a98.netlify.app/)
 
 ## Preview
 
