@@ -1,70 +1,97 @@
-# Getting Started with Create React App
+# Recipe App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Description
 
-## Available Scripts
+Recipe App created with the Router method.
 
-In the project directory, you can run:
+## Tools used in the project
 
-### `yarn start`
+- HTML
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- CSS
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- JS
 
-### `yarn test`
+- ReactJS
+  - .map
+  - BrowserRouter
+  - Route
+  - Routes
+  - useLocation
+  - NavLink
+  - useNavigate
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<!-- ## Github-pages -->
 
-### `yarn build`
+## Pages
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+[ Project Website ](https://delicate-cheesecake-7f6f1c.netlify.app/)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Preview
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+![ Project Snapshot ](recipeapp.gif)
 
-### `yarn eject`
+## Project Skeleton
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```
+Clarusway Web Page (folder)
+|
+├── public
+|     ├── images
+│     └── index.html
+|
+├── src
+│    ├── components
+|    │       |
+|    │       ├── Footer
+|    │       |     ├── Footer.jsx
+|    │       |     └── footer.scss
+|    |       |
+|    |       ├── Navbar
+|    │       |     ├── Navbar.jsx
+|    │       |     └── navbar.scss
+|    │       |
+|    │       └── Card
+|    │             ├── Card.jsx
+|    │             └── card.scss
+|    │
+|    ├── helper
+|    │       └── carddata.js
+|    │
+|    ├── pages
+|    │       |
+|    │       ├── About
+|    │       |     ├── About.jsx
+|    │       |     └── about.scss
+|    |       |
+|    |       ├── Css
+|    │       |     ├── Css.jsx
+|    │       |     └── css.scss
+|    │       ├── Home
+|    │       |     ├── Home.jsx
+|    │       |     └── home.scss
+|    |       |
+|    |       ├── Html
+|    │       |     ├── Html.jsx
+|    │       |     └── html.scss
+|    |       |
+|    |       ├── Logo
+|    │       |     ├── Logo.jsx
+|    │       |     └── logo.scss
+|    |       |
+|    │       └── Services
+|    │             ├── Services.jsx
+|    │             └── services.scss
+|    │
+|    ├── sass
+|    |       ├── reset.scss
+|    │       └── veriables.scss
+│    │
+│    ├── App.js
+│    ├── app.scss
+│    └── index.js
+|
+├── package.json
+├── yarn.lock
+└── README.md
+```
