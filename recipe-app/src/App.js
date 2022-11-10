@@ -8,6 +8,7 @@ import About from "./pages/About/About";
 import "./app.css";
 import Github from "./pages/Github/Github";
 import Navbar from "./components/Navbar/Navbar";
+import Details from "./pages/Details/Details";
 
 function App() {
   return (
@@ -22,6 +23,8 @@ function App() {
               <Route path="/" element={<Home />} />
               <Route path="/about" element={<About />} />
               <Route path="/github" element={<Github />} />
+              <Route path="/details" element={<Details/>} />
+
             </Route>
           </Routes>
         </BrowserRouter>

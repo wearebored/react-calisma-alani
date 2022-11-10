@@ -45,8 +45,12 @@ export const Search = styled.button`
   &:disabled {
     opacity: 0.7;
   }
+  &:hover {
+    background-color: #a8f9ff;
+    cursor: pointer;
+  }
   &:active {
-    background-color: red;
+    background-color: #598f94;
   }
 `;
 export const Select = styled.select`
