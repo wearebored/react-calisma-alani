@@ -6,7 +6,6 @@ import LoginProvider from "./context/LoginContext";
 import PrivateRouter from "./context/PrivateRouter";
 import About from "./pages/About/About";
 import "./app.css";
-import Github from "./pages/Github/Github";
 import Navbar from "./components/Navbar/Navbar";
 import Details from "./pages/Details/Details";
 
@@ -22,7 +21,6 @@ function App() {
             <Route path="/" element={<PrivateRouter />}>
               <Route path="/" element={<Home />} />
               <Route path="/about" element={<About />} />
-              <Route path="/github" element={<Github />} />
               <Route path="/details" element={<Details/>} />
 
             </Route>

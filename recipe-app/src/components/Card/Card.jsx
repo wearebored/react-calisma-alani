@@ -1,4 +1,4 @@
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { CardContainer } from "./Card-styled";
 
 function Card({ e }) {

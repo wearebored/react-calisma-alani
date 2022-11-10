@@ -4,7 +4,7 @@ import { LoginContext } from "./LoginContext";
 
 
 function PrivateRouter() {
-  const { user, setUser } = useContext(LoginContext);
+  const { user} = useContext(LoginContext);
   return <div>{user ? <Outlet /> : <Navigate to="/login" />}</div>;
 }
 

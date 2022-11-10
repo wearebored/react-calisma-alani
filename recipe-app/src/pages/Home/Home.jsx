@@ -1,5 +1,4 @@
-import { useContext, useEffect, useState } from "react";
-import { NavLink } from "react-router-dom";
+import { useContext, useState } from "react";
 import { LoginContext } from "../../context/LoginContext";
 import axios from "axios";
 import {
@@ -21,8 +20,8 @@ function Home() {
   const [datas, setDatas] = useState("bos");
   const [buttonn, setButtonn] = useState(false);
 
-  const { maxwidth, setMaxwidth } = useContext(LoginContext);
-  // const { user, setUser } = useContext(LoginContext);
+  const {  setMaxwidth } = useContext(LoginContext);
+  
 
   const data = async () => {
     console.log(query);

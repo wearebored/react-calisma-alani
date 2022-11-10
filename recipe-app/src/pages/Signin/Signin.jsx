@@ -13,10 +13,10 @@ import {
 } from "../../components/styled-components";
 import { LoginContext } from "../../context/LoginContext";
 import { register } from "../../firebase";
-import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
+
 
 function Signin() {
-  const { maxwidth, setMaxwidth } = useContext(LoginContext);
+  const {  setMaxwidth } = useContext(LoginContext);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const { user, setUser } = useContext(LoginContext);

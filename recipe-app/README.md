@@ -13,6 +13,7 @@ Recipe App created with the Router method.
 - JS
 
 - ReactJS
+  - Styled Components
   - .map
   - BrowserRouter
   - Route
@@ -20,6 +21,15 @@ Recipe App created with the Router method.
   - useLocation
   - NavLink
   - useNavigate
+  - Navigate
+  - React Icons
+  - useContext
+  - createContext
+  - Outlet
+  - Axios (.get)
+
+- Firebase
+  - Authentication
 
 <!-- ## Github-pages -->
 
@@ -43,54 +53,45 @@ Clarusway Web Page (folder)
 ├── src
 │    ├── components
 |    │       |
-|    │       ├── Footer
-|    │       |     ├── Footer.jsx
-|    │       |     └── footer.scss
+|    │       ├── styled-components.jsx
 |    |       |
 |    |       ├── Navbar
 |    │       |     ├── Navbar.jsx
-|    │       |     └── navbar.scss
+|    │       |     └── navbar-styled.jsx
 |    │       |
 |    │       └── Card
 |    │             ├── Card.jsx
-|    │             └── card.scss
+|    │             └── Card-styled.jsx
 |    │
-|    ├── helper
-|    │       └── carddata.js
+|    ├── context
+|    │       ├── LoginContext.jsx
+|    │       └── PrivateRouter.jsx
 |    │
 |    ├── pages
 |    │       |
 |    │       ├── About
 |    │       |     ├── About.jsx
-|    │       |     └── about.scss
+|    │       |     └── About-styled.jsx
 |    |       |
-|    |       ├── Css
-|    │       |     ├── Css.jsx
-|    │       |     └── css.scss
+|    |       ├── Details
+|    │       |     ├── Details.jsx
+|    │       |     └── Details-styles.jsx
 |    │       ├── Home
 |    │       |     ├── Home.jsx
-|    │       |     └── home.scss
+|    │       |     └── Home-styled.jsx
 |    |       |
-|    |       ├── Html
-|    │       |     ├── Html.jsx
-|    │       |     └── html.scss
+|    |       ├── Login
+|    │       |     └── Login.jsx
 |    |       |
-|    |       ├── Logo
-|    │       |     ├── Logo.jsx
-|    │       |     └── logo.scss
-|    |       |
-|    │       └── Services
-|    │             ├── Services.jsx
-|    │             └── services.scss
+|    │       └── Signin
+|    │             └── Signin.jsx
 |    │
-|    ├── sass
-|    |       ├── reset.scss
-|    │       └── veriables.scss
-│    │
+│    ├── firebase.js
 │    ├── App.js
-│    ├── app.scss
+│    ├── app.css
 │    └── index.js
 |
+├── .env
 ├── package.json
 ├── yarn.lock
 └── README.md

@@ -1,9 +1,8 @@
-import { NavLink } from "react-router-dom";
 import { Container, H3, Img, Linkedln, Paragraf } from "./About-styled";
 import { useContext } from "react";
 import { LoginContext } from "../../context/LoginContext";
 function About() {
-  const { maxwidth, setMaxwidth } = useContext(LoginContext);
+  const { setMaxwidth } = useContext(LoginContext);
   return (
     <Container
       onClick={() => {

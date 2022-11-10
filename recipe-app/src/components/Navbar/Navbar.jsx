@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext } from "react";
 
 import { LoginContext } from "../../context/LoginContext";
 import {
@@ -46,17 +46,8 @@ function Navbar() {
           </NavbarLink>
         </LinkDiv>
         <LinkDiv>
-          {/* <NavbarLink
-            onClick={() => {
-              setMaxwidth(true);
-            }}
-            // to=""
-          >
-            GITHUB
-          </NavbarLink> */}
-          {/* <a href="https://github.com/wearebored"></a> */}
-
-          <a target="_blank"
+          <a
+            target="_blank"
             onClick={() => {
               setMaxwidth(true);
             }}

@@ -15,7 +15,7 @@ import {
 import { LoginContext } from "../../context/LoginContext";
 import { login } from "../../firebase";
 function Login() {
-  const { maxwidth, setMaxwidth } = useContext(LoginContext);
+  const {  setMaxwidth } = useContext(LoginContext);
   const navigate = useNavigate();
   const { user, setUser } = useContext(LoginContext);
   const [errors, setErrors] = useState("");
