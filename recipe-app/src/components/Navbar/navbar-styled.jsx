@@ -30,6 +30,12 @@ export const NavbarContainer2 = styled.div`
 export const Navbarh2 = styled.h2`
   color: #1f1414;
   margin-left: 2rem;
+  &:hover {
+    color: #550909;
+  }
+  &:active {
+    color: #c40c0c;
+  }
   span {
     color: #2ca8da;
   }
@@ -53,6 +59,12 @@ export const LinkDiv = styled.div`
     text-decoration: none;
     font-size: 1.5rem;
     font-weight: 700;
+    &:hover {
+      color: #550909;
+    }
+    &:active {
+      color: #c40c0c;
+    }
   }
   @media (max-width: 1000px) {
     padding: 1rem;
@@ -68,6 +80,12 @@ export const NavbarLink = styled(Link)`
   text-decoration: none;
   font-size: 1.5rem;
   font-weight: 700;
+  &:hover {
+    color: #550909;
+  }
+  &:active {
+    color: #c40c0c;
+  }
 `;
 export const Menu = styled(GiHamburgerMenu)`
   height: 2rem;

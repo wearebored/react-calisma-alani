@@ -5,7 +5,11 @@ import {
   Button,
   Container,
   H1,
+  Icon,
+  Icon2,
+  IconContainer,
   Input,
+  InputConteiner,
   LoginImage,
 } from "../../components/styled-components";
 import { LoginContext } from "../../context/LoginContext";
@@ -17,6 +21,7 @@ function Login() {
   const [errors, setErrors] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [showhide, setShowhide] = useState(true);
   const loginClick = async () => {
     console.log(email);
     console.log(password);
@@ -42,7 +47,7 @@ function Login() {
         <Container>
           <LoginImage src="image/meal2.svg" alt="meal2" />
 
-          <H1>{"<ENES/> RECIPE"}</H1>
+          <H1>{"<WeAreBored/> RECIPE"}</H1>
 
           <Input
             onChange={(e) => {
@@ -50,23 +55,39 @@ function Login() {
             }}
             value={email}
             type="email"
-            placeholder="EMAİL"
+            placeholder="Email"
             id="email"
           />
-          <Input
-            onChange={(e) => {
-              setPassword(e.target.value);
-            }}
-            type="password"
-            value={password}
-            placeholder="PASSWORD"
-            id="password"
-          />
-          <Button onClick={loginClick}>LOGIN</Button>
+          <InputConteiner>
+            <input
+              onChange={(e) => {
+                setPassword(e.target.value);
+                setErrors("");
+              }}
+              type={showhide ? "password" : "text"}
+              name="password"
+              id="password"
+              placeholder="Password"
+            />
+            <IconContainer
+              onClick={() => {
+                setShowhide(!showhide);
+              }}
+            >
+              {showhide ? <Icon /> : <Icon2 />}
+            </IconContainer>
+          </InputConteiner>
+          <Button
+            disabled={email && password.length >= 6 ? false : true}
+            onClick={loginClick}
+          >
+            LOGIN
+          </Button>
           <hr style={{ width: "20rem" }} />
           <NavLink to="/signin">
             <Button>SIGN IN</Button>
           </NavLink>
+          <div className="hata">{errors ? errors : ""}</div>
         </Container>
       </BackgroundLogin>
     );

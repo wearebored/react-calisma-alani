@@ -5,10 +5,15 @@ import {
   Button,
   Container,
   H1,
+  Icon,
+  Icon2,
+  IconContainer,
   Input,
+  InputConteiner,
 } from "../../components/styled-components";
 import { LoginContext } from "../../context/LoginContext";
 import { register } from "../../firebase";
+import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
 
 function Signin() {
   const { maxwidth, setMaxwidth } = useContext(LoginContext);
@@ -16,6 +21,7 @@ function Signin() {
   const [password, setPassword] = useState("");
   const { user, setUser } = useContext(LoginContext);
   const [errors, setErrors] = useState("");
+  const [showhide, setShowhide] = useState(true);
   const navigate = useNavigate();
 
   const signinClick = async () => {
@@ -34,9 +40,13 @@ function Signin() {
     return <Navigate to="/" />;
   } else {
     return (
-      <BackgroundLogin>
+      <BackgroundLogin
+        onClick={() => {
+          setMaxwidth(true);
+        }}
+      >
         <Container>
-          <H1>{"<ENES/> RECIPE"}</H1>
+          <H1>{"<WeAreBored/> RECIPE"}</H1>
           <h2>SING IN</h2>
           <Input
             onChange={(e) => {
@@ -49,22 +59,38 @@ function Signin() {
             placeholder="Email"
             value={email}
           />
-          <Input
-            onChange={(e) => {
-              setPassword(e.target.value);
-              setErrors("");
-            }}
-            type="password"
-            name="password"
-            id="password"
-            placeholder="Password"
-          />
-          <Button onClick={signinClick}>SIGN IN</Button>
-          {/* <div style={{ height: "20px" }}>{errors ? errors : ""}</div> */}
+          <InputConteiner>
+            <input
+              onChange={(e) => {
+                setPassword(e.target.value);
+                setErrors("");
+              }}
+              type={showhide ? "password" : "text"}
+              name="password"
+              id="password"
+              placeholder="Password"
+            />
+            <IconContainer
+              onClick={() => {
+                setShowhide(!showhide);
+              }}
+            >
+              {showhide ? <Icon /> : <Icon2 />}
+              
+            </IconContainer>
+          </InputConteiner>
+
+          <Button
+            disabled={email && password.length >= 6 ? false : true}
+            onClick={signinClick}
+          >
+            SIGN IN
+          </Button>
           <hr style={{ width: "20rem" }} />
           <NavLink to="/login">
             <Button>LOGIN</Button>
           </NavLink>
+          <div className="hata">{errors ? errors : ""}</div>
         </Container>
       </BackgroundLogin>
     );

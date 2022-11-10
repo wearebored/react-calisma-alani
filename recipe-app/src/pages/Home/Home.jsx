@@ -21,7 +21,7 @@ function Home() {
   const [datas, setDatas] = useState("bos");
   const [buttonn, setButtonn] = useState(false);
 
-  // const { maxwidth, setMaxwidth } = useContext(LoginContext);
+  const { maxwidth, setMaxwidth } = useContext(LoginContext);
   // const { user, setUser } = useContext(LoginContext);
 
   const data = async () => {
@@ -55,7 +55,11 @@ function Home() {
     }
   };
   return (
-    <Container>
+    <Container
+      onClick={() => {
+        setMaxwidth(true);
+      }}
+    >
       <SearchContainer>
         <H2>Food App</H2>
         <SearchDiv>

@@ -39,5 +39,11 @@ export const Paragraf = styled.div`
 `;
 export const Linkedln = styled(AiFillLinkedin)`
   font-size: 3rem;
-  color: #141235;
+  color: #292525;
+  &:hover {
+    color: #550909;
+  }
+  &:active {
+    color: #c40c0c;
+  }
 `;

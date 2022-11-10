@@ -11,6 +11,10 @@ export const CardContainer = styled.div`
   width: 22rem;
   min-height: 25rem;
   border-radius: 5px;
+  &:hover {
+    transform: scale(1.02, 1.02);
+  }
+
   h3 {
     margin: 1.5rem;
     text-align: center;
@@ -27,5 +31,11 @@ export const CardContainer = styled.div`
     border-radius: 5px;
     margin: 1.5rem;
     font-weight: 700;
+    &:hover {
+      background-color: #cdf5ef;
+    }
+    &:active {
+      background-color: #5a4141;
+    }
   }
 `;
