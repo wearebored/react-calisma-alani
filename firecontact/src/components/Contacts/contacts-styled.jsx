@@ -18,21 +18,21 @@ export const H2 = styled.h2`
 `;
 
 export const Ul = styled.ul`
-  
   display: flex;
   list-style-type: none;
-  /* background-color: #ececec; */
-  background-color: red;
+  background-color: #ececec;
+  
 
   border-radius: 10px 10px 0 0;
-
-  li {
+  p {
+    padding: 1rem 0;
     
-    /* min-width: 4rem; */
-    /* width: 20%; */
-    min-width: 7rem;
+  }
+  li {
+   
+    width: 9rem;
     text-align: center;
-    padding: 1rem 1.5rem;
+   
   }
 `;
 export const NoData = styled.div`

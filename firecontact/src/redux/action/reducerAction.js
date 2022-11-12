@@ -1,4 +1,12 @@
-import { CONTACTS, GENDER, NAME, PHONE, RESET } from "../types/reducersType";
+import {
+  CONTACTEDİT,
+  CONTACTS,
+  GENDER,
+  IDDELETE,
+  NAME,
+  PHONE,
+  RESET,
+} from "../types/reducersType";
 
 export const nameChange = (payload) => {
   return { type: NAME, payload };
@@ -15,3 +23,9 @@ export const contactsChange = (payload) => {
 export const dataReset = () => {
   return { type: RESET };
 };
+export const idDelete = (payload) => {
+  return { type: IDDELETE, payload };
+};
+export const contactEdit= (payload)=>{
+  return {type:CONTACTEDİT,payload}
+}

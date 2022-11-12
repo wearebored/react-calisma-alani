@@ -8,42 +8,47 @@ function Contacts() {
 
   return (
     <ContactsContainer>
-      <H2>adadwwwwww</H2>
+      <H2>Contacts</H2>
 
       <Ul>
         <li>
           <p>Username</p>
-          {contacts.map((data) => (
+          {/* {contacts.map((data) => (
             <List key={data.id} data={data.name} />
-          ))}
+          ))} */}
         </li>
         <li>
           <p>Phone Number</p>
-          {contacts.map((data) => (
+          {/* {contacts.map((data) => (
             <List key={data.id} data={data.phone} />
-          ))}
+          ))} */}
         </li>
         <li>
           <p>Gender</p>
-          {contacts.map((data) => (
+          {/* {contacts.map((data) => (
             <List key={data.id} data={data.gender} />
-          ))}
+          ))} */}
         </li>
         <li>
           <p>Delete</p>
-          {contacts.map((data) => (
+          {/* {contacts.map((data) => (
             <List key={data.id} data2={"delete"} />
-          ))}
+          ))} */}
         </li>
         <li>
           <p>Edit</p>
-          {contacts.map((data) => (
+          {/* {contacts.map((data) => (
             <List key={data.id} data2={"edit"} />
-          ))}
+          ))}  */}
         </li>
       </Ul>
+      
+        {contacts.map((data) => (
+            <List key={data.id} data={data} dispatch={dispatch} />
+          ))} 
+      
 
-      {contacts.length == "0" && <NoData>LİSTE BOŞ</NoData>}
+      {contacts.length === 0 && <NoData>LİSTE BOŞ</NoData>}
     </ContactsContainer>
   );
 }
