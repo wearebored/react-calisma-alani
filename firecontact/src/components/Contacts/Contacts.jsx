@@ -13,40 +13,24 @@ function Contacts() {
       <Ul>
         <li>
           <p>Username</p>
-          {/* {contacts.map((data) => (
-            <List key={data.id} data={data.name} />
-          ))} */}
         </li>
         <li>
           <p>Phone Number</p>
-          {/* {contacts.map((data) => (
-            <List key={data.id} data={data.phone} />
-          ))} */}
         </li>
         <li>
           <p>Gender</p>
-          {/* {contacts.map((data) => (
-            <List key={data.id} data={data.gender} />
-          ))} */}
         </li>
         <li>
           <p>Delete</p>
-          {/* {contacts.map((data) => (
-            <List key={data.id} data2={"delete"} />
-          ))} */}
         </li>
         <li>
           <p>Edit</p>
-          {/* {contacts.map((data) => (
-            <List key={data.id} data2={"edit"} />
-          ))}  */}
         </li>
       </Ul>
-      
-        {contacts.map((data) => (
-            <List key={data.id} data={data} dispatch={dispatch} />
-          ))} 
-      
+
+      {contacts.map((data) => (
+        <List key={data.id} data={data} dispatch={dispatch} />
+      ))}
 
       {contacts.length === 0 && <NoData>LİSTENİZ BOŞ</NoData>}
     </ContactsContainer>
