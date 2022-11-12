@@ -21,16 +21,14 @@ import { useDispatch, useSelector } from "react-redux";
 function AddContact() {
   const dispatch = useDispatch();
   const { name, phone, gender } = useSelector((store) => store);
-  
 
   const buttonOnclick = () => {
     if (name && phone && gender) {
       dispatch(contactsChange({ name, phone, gender }));
       dispatch(dataReset());
     }
-    
   };
-  
+
   return (
     <AddcontactContainer>
       <H1>
@@ -40,6 +38,7 @@ function AddContact() {
       <InputContainer>
         <Input>
           <input
+            maxlength="12"
             onChange={(e) => dispatch(nameChange(e.target.value))}
             value={name}
             type="text"
@@ -50,6 +49,7 @@ function AddContact() {
         </Input>
         <Input>
           <input
+            maxlength="12"
             onChange={(e) => dispatch(phoneChange(e.target.value))}
             value={phone}
             type="text"

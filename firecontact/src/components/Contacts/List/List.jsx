@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { contactEdit, idDelete } from "../../../redux/action/reducerAction";
-import { DeleteIcon, EditIcon, Liste } from "./list-styled";
+import { DeleteIcon, EditIcon, Liste, SaveIcon } from "./list-styled";
 
 function List({ data, dispatch }) {
   const [edit, setEdit] = useState(true);
@@ -14,6 +14,7 @@ function List({ data, dispatch }) {
       ) : (
         <p>
           <input
+            maxlength="12"
             onChange={(e) => setContactname(e.target.value)}
             value={contactname}
             type="text"
@@ -25,6 +26,7 @@ function List({ data, dispatch }) {
       ) : (
         <p>
           <input
+            maxlength="12"
             onChange={(e) => setContactphone(e.target.value)}
             value={contactphone}
             type="text"
@@ -61,26 +63,71 @@ function List({ data, dispatch }) {
         />
       </p>
       <p>
-        <EditIcon
-          onClick={(e) => {
-            setEdit(!edit);
-            if(!edit){     
-            if (e.nativeEvent.path[0].nodeName === "path") {
-              console.log(e.nativeEvent.path[1].id);
-              const id = e.nativeEvent.path[1].id;
-              dispatch(
-                contactEdit({ contactname, contactphone, contactgender, id })
-              );
-            } else if (e.nativeEvent.path[0].nodeName === "svg") {
-              console.log(e.target.id);
-              const id = e.target.id;
-              dispatch(
-                contactEdit({ contactname, contactphone, contactgender, id })
-              );
+        {edit ? (
+          <EditIcon
+            onClick={(e) => {
+              setEdit(!edit);
+              if (!edit) {
+                if (e.nativeEvent.path[0].nodeName === "path") {
+                  console.log(e.nativeEvent.path[1].id);
+                  const id = e.nativeEvent.path[1].id;
+                  dispatch(
+                    contactEdit({
+                      contactname,
+                      contactphone,
+                      contactgender,
+                      id,
+                    })
+                  );
+                } else if (e.nativeEvent.path[0].nodeName === "svg") {
+                  console.log(e.target.id);
+                  const id = e.target.id;
+                  dispatch(
+                    contactEdit({
+                      contactname,
+                      contactphone,
+                      contactgender,
+                      id,
+                    })
+                  );
+                }
+              }
             }}
-          }}
-          id={data.id}
-        />
+            id={data.id}
+          />
+        ) : (
+          <SaveIcon
+            onClick={(e) => {
+              setEdit(!edit);
+              if (!edit) {
+                if (e.nativeEvent.path[0].nodeName === "path") {
+                  console.log(e.nativeEvent.path[1].id);
+                  const id = e.nativeEvent.path[1].id;
+                  dispatch(
+                    contactEdit({
+                      contactname,
+                      contactphone,
+                      contactgender,
+                      id,
+                    })
+                  );
+                } else if (e.nativeEvent.path[0].nodeName === "svg") {
+                  console.log(e.target.id);
+                  const id = e.target.id;
+                  dispatch(
+                    contactEdit({
+                      contactname,
+                      contactphone,
+                      contactgender,
+                      id,
+                    })
+                  );
+                }
+              }
+            }}
+            id={data.id}
+          />
+        )}
       </p>
     </Liste>
   );

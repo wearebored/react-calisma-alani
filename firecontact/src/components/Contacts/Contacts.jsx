@@ -48,7 +48,7 @@ function Contacts() {
           ))} 
       
 
-      {contacts.length === 0 && <NoData>LİSTE BOŞ</NoData>}
+      {contacts.length === 0 && <NoData>LİSTENİZ BOŞ</NoData>}
     </ContactsContainer>
   );
 }
