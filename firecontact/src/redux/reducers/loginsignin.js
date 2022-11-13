@@ -1,19 +1,19 @@
 import { LOGIN, LOGOUT, SIGNIN } from "../types/reducersType";
 
 const initialState = {
-    logindata:false
-    
+  logindata: false,
 };
 
-export default (state = initialState, { type, payload }) => {
+const loginsignin = (state = initialState, { type, payload }) => {
   switch (type) {
     case SIGNIN:
-      return { ...state, logindata:true,payload };
+      return { ...state, logindata: true, payload };
     case LOGIN:
-      return { ...state, logindata:true,payload };
+      return { ...state, logindata: true, payload };
     case LOGOUT:
-        return{...state,logindata:false}
+      return { ...state, logindata: false };
     default:
       return state;
   }
 };
+export default loginsignin;

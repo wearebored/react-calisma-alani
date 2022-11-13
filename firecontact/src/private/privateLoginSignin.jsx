@@ -55,9 +55,11 @@ export const login = async (email, password,dispatch,navigate,setError) => {
         dispatch(loginRedux(logindata))
         navigate("/")
     }
-    console.log(logindata);
+    else{
+      setError(logindata)
+    }
 }catch(error){
-    console.log(error);
+    setError(error)
 }
 };
 
@@ -73,6 +75,7 @@ export const login = async (email, password,dispatch,navigate,setError) => {
 //   });
 export const logout = async () => {
   const logoutdata = await signOut(auth);
+  console.log(logoutdata)
 };
 
 // signOut(auth).then(() => {

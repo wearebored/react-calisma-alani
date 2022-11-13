@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { Link, Navigate, useNavigate } from "react-router-dom";
+import { Navigate, useNavigate } from "react-router-dom";
 
 import { login } from "../../private/privateLoginSignin";
 import { LoginDiv, LoginLink } from "./login-styled";
@@ -9,11 +9,12 @@ function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+ 
   const navigate = useNavigate();
   const { logindata } = useSelector((store) => store.loginsignin);
-  const fata = useSelector((store) => store.loginsignin);
+
   const dispatch = useDispatch();
-  console.log(fata);
+
   if (logindata) {
     return <Navigate to="/" />;
   } else {
@@ -34,6 +35,7 @@ function Login() {
             type="text"
           />
           <button
+            disabled={email&&password.length>="6"?false:true}
             onClick={() => {
               login(email, password, dispatch, navigate, setError);
             }}
@@ -44,6 +46,7 @@ function Login() {
           <LoginLink to="/signin">
             <button>SIGNIN</button>
           </LoginLink>
+          <p>{error.code}</p>
         </div>
       </LoginDiv>
     );

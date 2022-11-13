@@ -67,6 +67,9 @@ export const Button = styled.button`
   font-weight: 500;
   border-radius: 4px;
   border: solid 0px;
+  &:disabled{
+    opacity: 0.5;
+  }
 `;
 export const Phone = styled(FaPhone)`
   position: absolute;

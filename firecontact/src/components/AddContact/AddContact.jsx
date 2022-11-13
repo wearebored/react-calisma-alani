@@ -23,36 +23,31 @@ import { doc, getDoc, getFirestore } from "firebase/firestore";
 import { app } from "../../firebase";
 import { useEffect } from "react";
 
-
 function AddContact() {
   const dispatch = useDispatch();
-  const db = getFirestore(app);
+
+  const { name, phone, gender } = useSelector((store) => store.addcontact);
+  // const db = getFirestore(app);
   // ------------------------
 
   // -------------------
   const okuma = async () => {
+    const db = getFirestore(app);
     const docRef = doc(db, "cities", "data");
     const docSnap = await getDoc(docRef);
     const data = docSnap.data();
-    dispatch(dataPull(data))
-   
-
-   
+    dispatch(dataPull(data));
   };
 
   useEffect(() => {
     okuma();
   }, []);
 
-;
-
-  const { name, phone, gender } = useSelector((store) => store.addcontact);
-  const veri = useSelector((store) => store);
   const buttonOnclick = () => {
     if (name && phone && gender) {
       dispatch(contactsChange({ name, phone, gender }));
       dispatch(dataReset());
-      dispatch(dataPush())
+      dispatch(dataPush());
     }
   };
 
@@ -96,7 +91,12 @@ function AddContact() {
           <option value="other">Other</option>
         </Gender>
 
-        <Button onClick={buttonOnclick}>Add</Button>
+        <Button
+          disabled={name && phone && gender ? false : true}
+          onClick={buttonOnclick}
+        >
+          Add
+        </Button>
       </InputContainer>
     </AddcontactContainer>
   );

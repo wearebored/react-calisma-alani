@@ -21,6 +21,13 @@ export const LoginDiv = styled.div`
     flex-direction: column;
     justify-content: center;
     gap: 1.5rem;
+    position: relative;
+    p {
+      position: absolute;
+      bottom: 2rem;
+      font-size: 1.2rem;
+      color: red;
+    }
     h2 {
       font-size: 3rem;
       color: #000000;

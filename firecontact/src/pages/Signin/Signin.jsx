@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Navigate, Link, useNavigate } from "react-router-dom";
+import { Navigate, useNavigate } from "react-router-dom";
 
 import { signin } from "../../private/privateLoginSignin";
 import { LoginDiv, LoginLink } from "../Login/login-styled";
@@ -13,7 +13,7 @@ function Signin() {
   const [veri, setVeri] = useState("");
   const [error, setError] = useState("");
   const { logindata } = useSelector((store) => store.loginsignin);
-  console.log(logindata);
+ 
   if (logindata) {
     return <Navigate to="/" />;
   } else {
@@ -35,6 +35,7 @@ function Signin() {
             type="text"
           />
           <button
+            disabled={email && password.length >= "6" ? false : true}
             onClick={() => {
               signin(email, password, setVeri, setError, navigate, dispatch);
 
@@ -47,6 +48,7 @@ function Signin() {
           <LoginLink to="/login">
             <button>LOGIN</button>
           </LoginLink>
+          <p>{error.code}</p>
         </div>
       </LoginDiv>
     );
