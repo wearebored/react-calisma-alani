@@ -8,12 +8,12 @@ export const Container = styled.div`
   background-position: center;
   /* background-repeat: repeat-y; */
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   gap: 5rem;
-  padding: 7rem 0;
+  padding: 15rem 0 5rem 0;
   @media (max-width: 1300px) {
-    padding-top: 7rem;
+    padding: 7rem 0;
     display: flex;
     flex-direction: column;
     align-items: center;
