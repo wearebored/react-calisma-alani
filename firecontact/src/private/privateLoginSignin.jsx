@@ -4,8 +4,7 @@ import {
   signInWithEmailAndPassword,
   signOut,
 } from "firebase/auth";
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+
 import { loginRedux, signinRedux } from "../redux/action/reducerAction";
 
 const auth = getAuth();
