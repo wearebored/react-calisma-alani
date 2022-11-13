@@ -5,3 +5,5 @@ export const CONTACTS = "CONTACTS";
 export const RESET = "RESET";
 export const IDDELETE = "IDDELETE";
 export const CONTACTEDİT = "CONTACTEDİT";
+export const DATAPULL = "DATAPULL";
+export const DATAPUSH = "DATAPUSH";

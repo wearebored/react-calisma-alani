@@ -1,6 +1,8 @@
 import {
   CONTACTEDİT,
   CONTACTS,
+  DATAPULL,
+  DATAPUSH,
   GENDER,
   IDDELETE,
   NAME,
@@ -26,6 +28,12 @@ export const dataReset = () => {
 export const idDelete = (payload) => {
   return { type: IDDELETE, payload };
 };
-export const contactEdit= (payload)=>{
-  return {type:CONTACTEDİT,payload}
-}
+export const contactEdit = (payload) => {
+  return { type: CONTACTEDİT, payload };
+};
+export const dataPull = (payload) => {
+  return { type: DATAPULL, payload };
+};
+export const dataPush = () => {
+  return { type: DATAPUSH };
+};

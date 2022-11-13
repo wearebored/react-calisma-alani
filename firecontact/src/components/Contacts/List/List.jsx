@@ -1,5 +1,9 @@
 import { useState } from "react";
-import { contactEdit, idDelete } from "../../../redux/action/reducerAction";
+import {
+  contactEdit,
+  dataPush,
+  idDelete,
+} from "../../../redux/action/reducerAction";
 import { DeleteIcon, EditIcon, Liste, SaveIcon } from "./list-styled";
 
 function List({ data, dispatch }) {
@@ -14,7 +18,7 @@ function List({ data, dispatch }) {
       ) : (
         <p>
           <input
-            maxlength="12"
+            maxLength="12"
             onChange={(e) => setContactname(e.target.value)}
             value={contactname}
             type="text"
@@ -26,7 +30,7 @@ function List({ data, dispatch }) {
       ) : (
         <p>
           <input
-            maxlength="12"
+            maxLength="12"
             onChange={(e) => setContactphone(e.target.value)}
             value={contactphone}
             type="text"
@@ -54,9 +58,11 @@ function List({ data, dispatch }) {
             if (e.nativeEvent.path[0].nodeName === "path") {
               console.log(e.nativeEvent.path[1].id);
               dispatch(idDelete(e.nativeEvent.path[1].id));
+              dispatch(dataPush());
             } else if (e.nativeEvent.path[0].nodeName === "svg") {
               console.log(e.target.id);
               dispatch(idDelete(e.target.id));
+              dispatch(dataPush());
             }
           }}
           id={data.id}
@@ -67,31 +73,6 @@ function List({ data, dispatch }) {
           <EditIcon
             onClick={(e) => {
               setEdit(!edit);
-              if (!edit) {
-                if (e.nativeEvent.path[0].nodeName === "path") {
-                  console.log(e.nativeEvent.path[1].id);
-                  const id = e.nativeEvent.path[1].id;
-                  dispatch(
-                    contactEdit({
-                      contactname,
-                      contactphone,
-                      contactgender,
-                      id,
-                    })
-                  );
-                } else if (e.nativeEvent.path[0].nodeName === "svg") {
-                  console.log(e.target.id);
-                  const id = e.target.id;
-                  dispatch(
-                    contactEdit({
-                      contactname,
-                      contactphone,
-                      contactgender,
-                      id,
-                    })
-                  );
-                }
-              }
             }}
             id={data.id}
           />
@@ -111,6 +92,7 @@ function List({ data, dispatch }) {
                       id,
                     })
                   );
+                  dispatch(dataPush());
                 } else if (e.nativeEvent.path[0].nodeName === "svg") {
                   console.log(e.target.id);
                   const id = e.target.id;
@@ -122,6 +104,7 @@ function List({ data, dispatch }) {
                       id,
                     })
                   );
+                  dispatch(dataPush());
                 }
               }
             }}

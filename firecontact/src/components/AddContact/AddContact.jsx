@@ -1,5 +1,7 @@
 import {
   contactsChange,
+  dataPull,
+  dataPush,
   dataReset,
   genderChange,
   nameChange,
@@ -17,15 +19,40 @@ import {
   User,
 } from "./addcontact-styled";
 import { useDispatch, useSelector } from "react-redux";
+import { doc, getDoc, getFirestore } from "firebase/firestore";
+import { app } from "../../firebase";
+import { useEffect } from "react";
+
 
 function AddContact() {
   const dispatch = useDispatch();
-  const { name, phone, gender } = useSelector((store) => store);
+  const db = getFirestore(app);
+  // ------------------------
 
+  // -------------------
+  const okuma = async () => {
+    const docRef = doc(db, "cities", "data");
+    const docSnap = await getDoc(docRef);
+    const data = docSnap.data();
+    dispatch(dataPull(data))
+   
+
+   
+  };
+
+  useEffect(() => {
+    okuma();
+  }, []);
+
+;
+
+  const { name, phone, gender } = useSelector((store) => store);
+  const veri = useSelector((store) => store);
   const buttonOnclick = () => {
     if (name && phone && gender) {
       dispatch(contactsChange({ name, phone, gender }));
       dispatch(dataReset());
+      dispatch(dataPush())
     }
   };
 
@@ -38,7 +65,7 @@ function AddContact() {
       <InputContainer>
         <Input>
           <input
-            maxlength="12"
+            maxLength="12"
             onChange={(e) => dispatch(nameChange(e.target.value))}
             value={name}
             type="text"
@@ -49,7 +76,7 @@ function AddContact() {
         </Input>
         <Input>
           <input
-            maxlength="12"
+            maxLength="12"
             onChange={(e) => dispatch(phoneChange(e.target.value))}
             value={phone}
             type="text"

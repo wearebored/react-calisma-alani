@@ -1,6 +1,10 @@
+import { doc, getFirestore, setDoc } from "firebase/firestore";
+import { app } from "../../firebase";
 import {
   CONTACTEDİT,
   CONTACTS,
+  DATAPULL,
+  DATAPUSH,
   GENDER,
   IDDELETE,
   NAME,
@@ -38,6 +42,7 @@ const addcontact = (state = initialState, { type, payload }) => {
       };
     case RESET:
       return { ...state, name: "", phone: "" };
+
     case IDDELETE:
       let counter = 0;
 
@@ -70,12 +75,24 @@ const addcontact = (state = initialState, { type, payload }) => {
 
       return {
         ...state,
-        contacts: [
-          ...data1,
-          ...data2,
-          ...state.contacts,
-        ],
+        contacts: [...data1, ...data2, ...state.contacts],
       };
+    case DATAPULL:
+      return {
+        ...payload,
+      };
+
+      case DATAPUSH:
+        {
+          const db = getFirestore(app);
+          const yazma = async (data) => {
+            await setDoc(doc(db, "cities", "data"), data);
+          };
+          yazma({...state,gender:""})
+          
+
+
+        }
 
     default:
       return state;
@@ -83,3 +100,7 @@ const addcontact = (state = initialState, { type, payload }) => {
 };
 export default addcontact;
 
+//  const db = getFirestore(app);
+// const yazma = async (data) => {
+//   await setDoc(doc(db, "cities", "data"), data);
+// };
