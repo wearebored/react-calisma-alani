@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Navigate, Link, useNavigate } from "react-router-dom";
 
 import { signin } from "../../private/privateLoginSignin";
+import { LoginDiv, LoginLink } from "../Login/login-styled";
 
 function Signin() {
   const navigate = useNavigate();
@@ -17,30 +18,37 @@ function Signin() {
     return <Navigate to="/" />;
   } else {
     return (
-      <div>
-        <input
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          type="email"
-        />
+      <LoginDiv>
+        <div>
+          <h2>SIGN IN</h2>
+          <input
+            placeholder="Email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            type="email"
+          />
 
-        <input
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          type="text"
-        />
-        <button
-          onClick={() => {
-            signin(email, password, setVeri, setError, navigate, dispatch);
+          <input
+            placeholder="Password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            type="text"
+          />
+          <button
+            onClick={() => {
+              signin(email, password, setVeri, setError, navigate, dispatch);
 
-            console.log(veri.operationType);
-            // veri.operationType=="signIn"&&navigate("/")
-          }}
-        >
-          signin
-        </button>
-        <Link to="/login">LOGIN</Link>
-      </div>
+              console.log(veri.operationType);
+              // veri.operationType=="signIn"&&navigate("/")
+            }}
+          >
+            SIGN IN
+          </button>
+          <LoginLink to="/login">
+            <button>LOGIN</button>
+          </LoginLink>
+        </div>
+      </LoginDiv>
     );
   }
 }

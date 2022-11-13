@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { Link, Navigate, useNavigate } from "react-router-dom";
 
 import { login } from "../../private/privateLoginSignin";
+import { LoginDiv, LoginLink } from "./login-styled";
 
 function Login() {
   const [email, setEmail] = useState("");
@@ -14,31 +15,37 @@ function Login() {
   const dispatch = useDispatch();
   console.log(fata);
   if (logindata) {
-    return (
-      <Navigate to="/" />
-    );
+    return <Navigate to="/" />;
   } else {
     return (
-      <div>
-        <input
-          onChange={(e) => setEmail(e.target.value)}
-          value={email}
-          type="email"
-        />
-        <input
-          onChange={(e) => setPassword(e.target.value)}
-          value={password}
-          type="text"
-        />
-        <button
-          onClick={() => {
-            login(email, password, dispatch, navigate, setError);
-          }}
-        >
-          Login
-        </button>
-        <Link to="/signin" >SIGNIN</Link>
-      </div>
+      <LoginDiv>
+        <div>
+          <h2>LOGIN</h2>
+          <input
+            placeholder="Email"
+            onChange={(e) => setEmail(e.target.value)}
+            value={email}
+            type="email"
+          />
+          <input
+            placeholder="Password"
+            onChange={(e) => setPassword(e.target.value)}
+            value={password}
+            type="text"
+          />
+          <button
+            onClick={() => {
+              login(email, password, dispatch, navigate, setError);
+            }}
+          >
+            LOGIN
+          </button>
+
+          <LoginLink to="/signin">
+            <button>SIGNIN</button>
+          </LoginLink>
+        </div>
+      </LoginDiv>
     );
     // return <Navigate to="/" />;
   }
