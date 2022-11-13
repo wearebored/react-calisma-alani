@@ -46,7 +46,7 @@ function AddContact() {
 
 ;
 
-  const { name, phone, gender } = useSelector((store) => store);
+  const { name, phone, gender } = useSelector((store) => store.addcontact);
   const veri = useSelector((store) => store);
   const buttonOnclick = () => {
     if (name && phone && gender) {

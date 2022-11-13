@@ -5,9 +5,12 @@ import {
   DATAPUSH,
   GENDER,
   IDDELETE,
+  LOGIN,
+  LOGOUT,
   NAME,
   PHONE,
   RESET,
+  SIGNIN,
 } from "../types/reducersType";
 
 export const nameChange = (payload) => {
@@ -36,4 +39,13 @@ export const dataPull = (payload) => {
 };
 export const dataPush = () => {
   return { type: DATAPUSH };
+};
+export const signinRedux = (payload) => {
+  return { type: SIGNIN, payload };
+};
+export const loginRedux = (payload) => {
+  return { type: LOGIN, payload };
+};
+export const logoutRedux = () => {
+  return { type: LOGOUT };
 };

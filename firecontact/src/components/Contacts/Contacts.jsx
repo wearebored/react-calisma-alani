@@ -4,8 +4,11 @@ import List from "./List/List";
 
 function Contacts() {
   const dispatch = useDispatch();
-  const { name, phone, gender, contacts } = useSelector((store) => store);
-
+  const { name, phone, gender, contacts } = useSelector(
+    (store) => store.addcontact
+  );
+  // const data = useSelector((store) => store.addcontact);
+  // console.log(data);
   return (
     <ContactsContainer>
       <H2>Contacts</H2>
