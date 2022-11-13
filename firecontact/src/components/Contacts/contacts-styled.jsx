@@ -2,7 +2,7 @@ import styled from "styled-components";
 export const ContactsContainer = styled.div`
   /* background-color: white; */
   /* width: 70%; */
-  height: 40vh;
+  /* height: 40vh; */
 
   grid-template-columns: 1fr 1fr 1fr 1fr;
 `;
