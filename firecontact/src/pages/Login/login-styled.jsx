@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 export const LoginDiv = styled.div`
-  min-height: 100vh;
+  min-height: 90vh;
   background-image: url("https://picsum.photos/1600/900");
   background-size: cover;
   background-position: center;

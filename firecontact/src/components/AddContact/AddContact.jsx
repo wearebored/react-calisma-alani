@@ -61,7 +61,14 @@ function AddContact() {
         <Input>
           <input
             maxLength="12"
-            onChange={(e) => dispatch(nameChange(e.target.value))}
+            onChange={(e) =>
+              dispatch(
+                nameChange(
+                  e.target.value.slice(0, 1).toUpperCase() +
+                    e.target.value.slice(1)
+                )
+              )
+            }
             value={name}
             type="text"
             placeholder="Name"
@@ -69,6 +76,7 @@ function AddContact() {
 
           <User />
         </Input>
+
         <Input>
           <input
             maxLength="12"
@@ -86,9 +94,9 @@ function AddContact() {
           <option disabled value="gender">
             Gender
           </option>
-          <option value="male">Male</option>
-          <option value="female">Female</option>
-          <option value="other">Other</option>
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+          <option value="Other">Other</option>
         </Gender>
 
         <Button

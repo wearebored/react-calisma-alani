@@ -19,7 +19,12 @@ function List({ data, dispatch }) {
         <p>
           <input
             maxLength="12"
-            onChange={(e) => setContactname(e.target.value)}
+            onChange={(e) =>
+              setContactname(
+                e.target.value.slice(0, 1).toUpperCase() +
+                  e.target.value.slice(1)
+              )
+            }
             value={contactname}
             type="text"
           />
@@ -45,9 +50,9 @@ function List({ data, dispatch }) {
             onChange={(e) => setContactgender(e.target.value)}
             defaultValue={contactgender}
           >
-            <option value="male">Male</option>
-            <option value="female">Female</option>
-            <option value="other">Other</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Other">Other</option>
           </select>
         </p>
       )}

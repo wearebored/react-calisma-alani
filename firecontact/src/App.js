@@ -6,11 +6,13 @@ import { Provider } from "react-redux";
 import  PrivateRouter  from "./private/PrivateRouter";
 import Login from "./pages/Login/Login";
 import Signin from "./pages/Signin/Signin";
+import Navbar from "./components/Navbar/Navbar";
 function App() {
   return (
     <div className="App">
       <Provider store={store}>
         <BrowserRouter>
+        <Navbar/>
           <Routes>
             <Route path="/login" element={<Login />} />
             <Route path="/signin" element={<Signin/>}/>
