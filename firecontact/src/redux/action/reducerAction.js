@@ -3,6 +3,7 @@ import {
   CONTACTS,
   DATAPULL,
   DATAPUSH,
+  DATARESET,
   GENDER,
   IDDELETE,
   LOGIN,
@@ -37,8 +38,8 @@ export const contactEdit = (payload) => {
 export const dataPull = (payload) => {
   return { type: DATAPULL, payload };
 };
-export const dataPush = () => {
-  return { type: DATAPUSH };
+export const dataPush = (payload) => {
+  return { type: DATAPUSH, payload };
 };
 export const signinRedux = (payload) => {
   return { type: SIGNIN, payload };
@@ -48,4 +49,7 @@ export const loginRedux = (payload) => {
 };
 export const logoutRedux = () => {
   return { type: LOGOUT };
+};
+export const logoutReset = () => {
+  return { type: DATARESET };
 };

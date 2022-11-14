@@ -5,6 +5,7 @@ import {
   CONTACTS,
   DATAPULL,
   DATAPUSH,
+  DATARESET,
   GENDER,
   IDDELETE,
   NAME,
@@ -21,6 +22,7 @@ const initialState = {
 };
 
 const addcontact = (state = initialState, { type, payload }) => {
+  
   switch (type) {
     case NAME:
       return { ...state, name: payload };
@@ -29,6 +31,8 @@ const addcontact = (state = initialState, { type, payload }) => {
     case GENDER:
       return { ...state, gender: payload };
     case CONTACTS:
+      
+      
       return {
         ...state,
         contacts: [
@@ -48,7 +52,7 @@ const addcontact = (state = initialState, { type, payload }) => {
 
       for (let i of state.contacts) {
         if (i.id == payload) {
-          console.log("eşit");
+          
           break;
         } else {
           counter += 1;
@@ -61,7 +65,7 @@ const addcontact = (state = initialState, { type, payload }) => {
       let counter2 = 0;
       for (let i of state.contacts) {
         if (i.id == payload.id) {
-          console.log("eşit");
+          
           break;
         } else {
           counter2 += 1;
@@ -82,17 +86,28 @@ const addcontact = (state = initialState, { type, payload }) => {
         ...payload,
       };
 
-      case DATAPUSH:
-        {
-          const db = getFirestore(app);
-          const yazma = async (data) => {
-            await setDoc(doc(db, "cities", "data"), data);
-          };
-          yazma({...state,gender:""})
-          
-
-
-        }
+    case DATAPUSH: 
+    const datas = { ...state, gender: "" };
+    const db = getFirestore(app);
+    const yazma = async (data, uid) => {
+      await setDoc(doc(db, "data", uid), data);
+    };
+    
+    yazma(datas, payload.uid);
+    
+    
+    return{
+      ...state
+    }
+    case DATARESET:
+      return {
+        ...payload,
+        name: "",
+        phone: "",
+        gender: "",
+        contacts: [],
+        elemansayi: 0,
+      };
 
     default:
       return state;

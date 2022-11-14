@@ -35,12 +35,21 @@ export const Liste = styled.div`
 export const DeleteIcon = styled(AiFillDelete)`
   text-align: center;
   font-size: 1.5rem;
+  &:hover{
+    color: red;
+  }
 `;
 export const EditIcon = styled(AiFillEdit)`
   text-align: center;
   font-size: 1.5rem;
+  &:hover {
+    color: #00ff55;
+  }
 `;
 export const SaveIcon = styled(AiFillSave)`
   text-align: center;
   font-size: 1.5rem;
+  &:hover {
+    color: #00ff40;
+  }
 `;

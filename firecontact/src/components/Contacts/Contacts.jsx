@@ -1,8 +1,8 @@
-import { ContactsContainer, H2, NoData, Ul } from "./contacts-styled";
+import { Bekleme, ContactsContainer, H2, NoData, Ul } from "./contacts-styled";
 import { useDispatch, useSelector } from "react-redux";
 import List from "./List/List";
 
-function Contacts() {
+function Contacts({bekle}) {
   const dispatch = useDispatch();
   const { name, phone, gender, contacts } = useSelector(
     (store) => store.addcontact
@@ -34,8 +34,9 @@ function Contacts() {
       {contacts.map((data) => (
         <List key={data.id} data={data} dispatch={dispatch} />
       ))}
-
-      {contacts.length === 0 && <NoData>LİSTENİZ BOŞ</NoData>}
+      
+      {contacts.length===0&&bekle?<Bekleme></Bekleme>:contacts.length === 0 && <NoData>LİSTENİZ BOŞ</NoData>}
+      {/* {contacts.length === 0 && <NoData>LİSTENİZ BOŞ</NoData>} */}
     </ContactsContainer>
   );
 }

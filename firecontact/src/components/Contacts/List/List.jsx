@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useSelector } from "react-redux";
 import {
   contactEdit,
   dataPush,
@@ -11,6 +12,8 @@ function List({ data, dispatch }) {
   const [contactname, setContactname] = useState(data.name);
   const [contactphone, setContactphone] = useState(data.phone);
   const [contactgender, setContactgender] = useState(data.gender);
+  const { payload } = useSelector((store) => store.loginsignin);
+  const uid = payload.user.uid;
   return (
     <Liste>
       {edit ? (
@@ -61,13 +64,13 @@ function List({ data, dispatch }) {
         <DeleteIcon
           onClick={(e) => {
             if (e.nativeEvent.path[0].nodeName === "path") {
-              console.log(e.nativeEvent.path[1].id);
+              
               dispatch(idDelete(e.nativeEvent.path[1].id));
-              dispatch(dataPush());
+              dispatch(dataPush({ uid }));
             } else if (e.nativeEvent.path[0].nodeName === "svg") {
-              console.log(e.target.id);
+              
               dispatch(idDelete(e.target.id));
-              dispatch(dataPush());
+              dispatch(dataPush({ uid }));
             }
           }}
           id={data.id}
@@ -87,7 +90,7 @@ function List({ data, dispatch }) {
               setEdit(!edit);
               if (!edit) {
                 if (e.nativeEvent.path[0].nodeName === "path") {
-                  console.log(e.nativeEvent.path[1].id);
+                  
                   const id = e.nativeEvent.path[1].id;
                   dispatch(
                     contactEdit({
@@ -97,9 +100,9 @@ function List({ data, dispatch }) {
                       id,
                     })
                   );
-                  dispatch(dataPush());
+                  dispatch(dataPush({ uid }));
                 } else if (e.nativeEvent.path[0].nodeName === "svg") {
-                  console.log(e.target.id);
+                  
                   const id = e.target.id;
                   dispatch(
                     contactEdit({
@@ -109,7 +112,7 @@ function List({ data, dispatch }) {
                       id,
                     })
                   );
-                  dispatch(dataPush());
+                  dispatch(dataPush({ uid }));
                 }
               }
             }}

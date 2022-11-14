@@ -19,35 +19,37 @@ import {
   User,
 } from "./addcontact-styled";
 import { useDispatch, useSelector } from "react-redux";
-import { doc, getDoc, getFirestore } from "firebase/firestore";
-import { app } from "../../firebase";
-import { useEffect } from "react";
+
 
 function AddContact() {
   const dispatch = useDispatch();
 
   const { name, phone, gender } = useSelector((store) => store.addcontact);
+  const data = useSelector((store) => store.addcontact);
+  const {payload} = useSelector((store) => store.loginsignin);
+  const uid=payload.user.uid
+ 
   // const db = getFirestore(app);
   // ------------------------
 
   // -------------------
-  const okuma = async () => {
-    const db = getFirestore(app);
-    const docRef = doc(db, "cities", "data");
-    const docSnap = await getDoc(docRef);
-    const data = docSnap.data();
-    dispatch(dataPull(data));
-  };
+  // const okuma = async () => {
+  //   const db = getFirestore(app);
+  //   const docRef = doc(db, "cities", "data");
+  //   const docSnap = await getDoc(docRef);
+  //   const data = docSnap.data();
+  //   dispatch(dataPull(data));
+  // };
 
-  useEffect(() => {
-    okuma();
-  }, []);
+  // useEffect(() => {
+  //   okuma();
+  // }, []);
 
   const buttonOnclick = () => {
     if (name && phone && gender) {
       dispatch(contactsChange({ name, phone, gender }));
       dispatch(dataReset());
-      dispatch(dataPush());
+      dispatch(dataPush({uid}));
     }
   };
 

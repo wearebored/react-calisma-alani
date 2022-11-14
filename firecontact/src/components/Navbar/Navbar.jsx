@@ -1,11 +1,11 @@
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { logoutRedux } from "../../redux/action/reducerAction";
+import { logoutRedux, logoutReset } from "../../redux/action/reducerAction";
 import { NavbarDiv } from "./navbar-styled";
 
 function Navbar() {
   const { logindata } = useSelector((store) => store.loginsignin);
-  const navigate=useNavigate()
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   return (
     <NavbarDiv>
@@ -15,6 +15,7 @@ function Navbar() {
       <button
         onClick={() => {
           dispatch(logoutRedux());
+          dispatch(logoutReset());
           navigate("/login");
         }}
       >

@@ -7,6 +7,8 @@ export const IDDELETE = "IDDELETE";
 export const CONTACTEDİT = "CONTACTEDİT";
 export const DATAPULL = "DATAPULL";
 export const DATAPUSH = "DATAPUSH";
-export const SIGNIN = "SIGNIN"
-export const LOGIN = "LOGIN"
-export const LOGOUT = "LOGOUT"
+export const SIGNIN = "SIGNIN";
+export const LOGIN = "LOGIN";
+export const LOGOUT = "LOGOUT";
+export const DATARESET = "DATARESET";
+

@@ -10,8 +10,8 @@ export const NavbarDiv = styled.div`
     font-size: 2.5rem;
     color: #ec2a2a;
     text-align: center;
-    span{
-        color: #ffffff;
+    span {
+      color: #ffffff;
     }
   }
   button {
@@ -20,6 +20,11 @@ export const NavbarDiv = styled.div`
     border: solid 0;
     font-weight: 700;
     color: white;
-    ;
+    &:hover {
+      color: red;
+    }
+    &:active {
+      transform: scale(1.05);
+    }
   }
 `;

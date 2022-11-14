@@ -35,3 +35,13 @@ export const NoData = styled.div`
   color: white;
   font-weight: 700;
 `;
+export const Bekleme = styled.div`
+  background-image: url("image/spinner.gif");
+  background-color: white;
+  height: 6rem;
+  width: 45rem;
+  background-size: cover;
+  background-position: center;
+  background-size: 15rem;
+  background-repeat: no-repeat;
+`;
