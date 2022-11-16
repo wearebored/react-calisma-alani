@@ -40,6 +40,9 @@ export const LoginRight = styled.div`
     border-radius: 5px;
     border: solid 0px;
     margin: 0.3rem 0;
+    &:disabled {
+      opacity: 0.6;
+    }
   }
   label {
     font-size: 1.5rem;
@@ -51,4 +54,10 @@ export const ImgDiv = styled.div`
     height: 12rem;
     transform: scale(1.3);
   }
+`;
+export const Uyari = styled.p`
+  height: 0;
+  font-size: 1rem;
+  transform: translateY(3.6rem);
+  color: red;
 `;
