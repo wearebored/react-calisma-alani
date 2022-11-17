@@ -1,13 +1,29 @@
-import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
-
- 
-export const registerfirebase = async (email, password) => {
- const auth = getAuth();
+import {
+  getAuth,
+  createUserWithEmailAndPassword,
+  updateProfile,
+} from "firebase/auth";
+import { app } from "../firebase";
+export const registerfirebase = async (
+  email,
+  password,
+  setError,
+  navigate,
+  dispatch,
+  setRegister,
+  datas
+) => {
+  const auth = getAuth();
   try {
-      
     const data = await createUserWithEmailAndPassword(auth, email, password);
-   return data
+    const { uid } = data.user;
+    updateProfile(auth.currentUser, {
+      displayName: `${datas.firstname} ${datas.lastname}`,
+    });
+    dispatch(setRegister({ ...datas, uid }));
+    navigate("/");
   } catch (error) {
-    return error
+    setError(error);
   }
+  
 };

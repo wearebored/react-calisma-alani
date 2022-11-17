@@ -1,11 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { registerfirebase } from "../../firebase/registerfirebase";
-import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 
 const initialState = {
-  logindata: "",
-  firebase: "",
-  error: "",
+  email: "",
+  firstname: "",
+  lastname: "",
+  uid: "",
 };
 
 const loginSlice = createSlice({
@@ -13,21 +12,37 @@ const loginSlice = createSlice({
   initialState,
   reducers: {
     setLogin: (state, action) => {
-      state.logindata = action.payload;
+      state.uid = action.payload.uid;
+      state.email = action.payload.email;
+      state.firstname = action.payload.firstname;
+      state.lastname = action.payload.lastname;
+    },
+    setLoginGoogle: (state, action) => {
+      state.uid = action.payload.uid;
+      state.email = action.payload.email;
+      state.firstname = action.payload.firstname;
+      state.lastname = action.payload.lastname;
     },
     setRegister: (state, action) => {
-      state.logindata = action.payload;
+      console.log(action.payload);
 
-      const data = registerfirebase(
-        action.payload.email,
-        action.payload.password1
-      );
+      state.uid = action.payload.uid;
+      state.email = action.payload.email;
+      state.firstname = action.payload.firstname;
+      state.lastname = action.payload.lastname;
 
-      console.log(data);
+      console.log(state);
+      console.log(initialState);
+    },
+    setLogout: (state, action) => {
+      state.uid = "";
+      state.email = "";
+      state.firstname = "";
+      state.lastname = "";
     },
   },
 });
 
-export const { setLogin, setRegister } = loginSlice.actions;
+export const { setLogin, setRegister, setLoginGoogle } = loginSlice.actions;
 
 export default loginSlice.reducer;

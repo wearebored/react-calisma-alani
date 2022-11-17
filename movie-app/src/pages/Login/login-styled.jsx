@@ -61,3 +61,8 @@ export const Uyari = styled.p`
   transform: translateY(3.6rem);
   color: red;
 `;
+export const Hata = styled.p`
+  height: 0;
+  color: red;
+  transform: translateY(1rem);
+`;
