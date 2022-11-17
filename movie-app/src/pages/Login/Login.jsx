@@ -1,10 +1,11 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Navigate, NavLink, useNavigate } from "react-router-dom";
 import { setLogin, setLoginGoogle } from "../../app/features/loginSlice";
+import { setPage } from "../../app/features/pagesSlice";
 import loginfirebase from "../../firebase/loginfirebase";
 import logingoogle from "../../firebase/logingoogle";
-import { LeftRight, LoginPage, LoginRight } from "./login-styled";
+import { Hata, LeftRight, LoginPage, LoginRight} from "./login-styled";
 
 function Login() {
   const [email, setEmail] = useState("");
@@ -15,6 +16,11 @@ function Login() {
   const data = useSelector((store) => store.login);
   console.log(data);
 
+  useEffect(() => {
+    dispatch(setPage("login"));
+    
+  }, [dispatch]);  
+console.log(error)
   if (data.uid) {
     return <Navigate to="/" />;
   } else {
@@ -43,21 +49,23 @@ function Login() {
               />
 
               <NavLink to="/forgot">Forgot password?</NavLink>
-              <button disabled={email && password.length >= "6" ? false : true}
-              onClick={()=>{
-                
-                loginfirebase(
-                  email,
-                  password,
-                  dispatch,
-                  navigate,
-                  setLogin,
-                  setError
-                );
-              }}
-              >                
+              <button
+                disabled={email && password.length >= "6" ? false : true}
+                onClick={() => {
+                  loginfirebase(
+                    email,
+                    password,
+                    dispatch,
+                    navigate,
+                    setLogin,
+                    setError
+                  );
+                }}
+              >
                 Login
+                <Hata>{error.code}</Hata>
               </button>
+
               <button
                 onClick={() => {
                   logingoogle(dispatch, navigate, setLoginGoogle, setError);

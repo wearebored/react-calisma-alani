@@ -43,6 +43,6 @@ const loginSlice = createSlice({
   },
 });
 
-export const { setLogin, setRegister, setLoginGoogle } = loginSlice.actions;
+export const { setLogin, setRegister, setLoginGoogle,setLogout } = loginSlice.actions;
 
 export default loginSlice.reducer;

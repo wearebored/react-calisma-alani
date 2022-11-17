@@ -1,7 +1,8 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Navigate, useNavigate } from "react-router-dom";
 import { setLoginGoogle, setRegister } from "../../app/features/loginSlice";
+import { setPage } from "../../app/features/pagesSlice";
 import logingoogle from "../../firebase/logingoogle";
 import { registerfirebase } from "../../firebase/registerfirebase";
 import {
@@ -23,6 +24,13 @@ function Register() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const data1 = useSelector((store) => store.login);
+
+  useEffect(() => {
+    
+    dispatch(setPage("register"));
+  }, [dispatch]);
+  
+
 
   if (data1.uid) {
     return <Navigate to="/" />;

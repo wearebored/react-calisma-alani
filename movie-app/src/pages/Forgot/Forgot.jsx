@@ -1,8 +1,17 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
+import { setPage } from "../../app/features/pagesSlice";
 import { ImgDiv, LeftRight, LoginPage, LoginRight } from "../Login/login-styled";
 
 function Forgot() {
   const [email,setEmail]=useState("")
+  const [sonuc,setSonuc]=useState("")
+const dispatch = useDispatch()
+useEffect(() => {
+  dispatch(setPage("forgot"));
+
+ 
+}, [dispatch])
 
   return (
     <div>
@@ -24,7 +33,10 @@ function Forgot() {
             />
 
             {/* <NavLink to="/forgot">Forgot password?</NavLink> */}
-            <button disabled={!email} >Continue</button>
+            <button disabled={!email} onClick={{
+              forgutfire
+          }
+            } >Continue</button>
           </LoginRight>
         </LeftRight>
       </LoginPage>

@@ -66,3 +66,4 @@ export const Hata = styled.p`
   color: red;
   transform: translateY(1rem);
 `;
+

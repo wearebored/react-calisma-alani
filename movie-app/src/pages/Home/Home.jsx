@@ -1,6 +1,8 @@
 
-import { useSelector } from "react-redux";
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import { setPage } from "../../app/features/pagesSlice";
 import Card from "../../components/Card/Card";
 
 import { CardsContainer, HomeSearch } from "./home-styled";
@@ -9,6 +11,11 @@ import { CardsContainer, HomeSearch } from "./home-styled";
 
 function Home() {
  const data= useSelector((store)=>store.login)
+const dispatch = useDispatch();
+useEffect(() => {
+  dispatch(setPage("home"));
+}, [dispatch]);
+
 
 
   return (
