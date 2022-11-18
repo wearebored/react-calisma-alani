@@ -16,7 +16,7 @@ export const DetailsContainer = styled.div`
     display: flex;
     margin-bottom: 4rem;
     border: solid 2px #d8d8d8;
-
+    overflow: hidden;
     img {
       height: 80vh;
     }
@@ -38,6 +38,13 @@ export const DetailsP = styled.div`
 `;
 export const Overview = styled.div`
   padding: 1rem;
+  p {
+    font-size: 1.2rem;
+  }
+  h4 {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+  }
 `;
 export const Rate = styled.div`
   p {
@@ -45,5 +52,4 @@ export const Rate = styled.div`
     border-top: solid 2px #d8d8d8;
     border-left: solid 2px #d8d8d8;
   }
-  /* border: solid 2px #d8d8d8; */
 `;

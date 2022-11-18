@@ -1,37 +1,61 @@
-import { DetailsContainer,  DetailsP, Overview, Rate, VideoDiv } from "./details-styled"
-
+import { useEffect, useState } from "react";
+import { Link, useNavigate, useParams } from "react-router-dom";
+import {
+  DetailsContainer,
+  DetailsP,
+  Overview,
+  Rate,
+  VideoDiv,
+} from "./details-styled";
+import { MovieDetail, MovieVideo } from "../../data/movie-data";
 function Details() {
+  const { id } = useParams();
+  const [data, setData] = useState("");
+  const [detail, setDetail] = useState("");
+  const navigate = useNavigate();
+  
+
+  useEffect(() => {
+    MovieVideo(id, setData);
+    MovieDetail(id, setDetail);
+  }, []);
+
   return (
     <div>
       <DetailsContainer>
         <h2>Minions: The Rise of Gru</h2>
 
         <VideoDiv>
-          <iframe
-            width="560"
-            height="315"
-            src="https://www.youtube.com/embed/9LukR30xKSQ"
-            title="YouTube video player"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen
-          ></iframe>
+          {data && (
+            <iframe
+              width="560"
+              height="315"
+              src={`https://www.youtube.com/embed/${data.data?.results[0].key}?autoplay=1&mute=1`}
+              title="YouTube video"
+              allowFullScreen
+            ></iframe>
+          )}
+         
         </VideoDiv>
         <main>
           <img
-            src="https://cdn03.ciceksepeti.com/cicek/kcm199703-1/L/minions-the-rise-of-gru-2021-70-cm-x-100-cm-afis-poster-colemanat-kcm199703-1-7f4de8446abb4270bbf37758d2e97d04.jpg"
+            src={`https://image.tmdb.org/t/p/w1280${detail.data?.poster_path}`}
             alt=""
           />
           <DetailsP>
             <Overview>
               <h4>Overview</h4>
-              <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Error aperiam maxime consequuntur quam assumenda eligendi qui sequi officia enim voluptatibus!</p>
+              <p>{detail.data?.overview}</p>
             </Overview>
             <Rate>
-              <p>date</p>
-              <p>rate</p>
-              <p>total vote</p>
-              <p>Go back</p>
+              <p>Release Date:{detail.data?.release_date}</p>
+              <p>Rate:{detail.data?.vote_average}</p>
+              <p>Total Vote:{detail.data?.vote_count}</p>
+              <p>
+                <Link to="" onClick={() => navigate(-1)}>
+                  <span>Go Back</span>
+                </Link>
+              </p>
             </Rate>
           </DetailsP>
         </main>
@@ -40,4 +64,4 @@ function Details() {
   );
 }
 
-export default Details
+export default Details;

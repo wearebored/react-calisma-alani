@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const HomeSearch = styled.div`
   height: 7vh;
-  background-color: red;
+  background-color: #929292;
   display: flex;
   align-items: center;
   justify-content: center;

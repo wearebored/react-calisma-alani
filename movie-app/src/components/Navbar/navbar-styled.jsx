@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const NavbarContainer = styled.div`
   height: 10vh;
   /* width: 100%; */
-  background-color: blue;
+  background-color: #2471ff;
   h1 {
     color: white;
   }
