@@ -14,13 +14,13 @@ function Login() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const data = useSelector((store) => store.login);
-  console.log(data);
+
 
   useEffect(() => {
     dispatch(setPage("login"));
     
   }, [dispatch]);  
-console.log(error)
+
   if (data.uid) {
     return <Navigate to="/" />;
   } else {

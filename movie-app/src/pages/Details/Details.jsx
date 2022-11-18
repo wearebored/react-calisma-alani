@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { Link, Navigate, useNavigate, useParams } from "react-router-dom";
 import {
   DetailsContainer,
   DetailsP,
@@ -8,18 +8,25 @@ import {
   VideoDiv,
 } from "./details-styled";
 import { MovieDetail, MovieVideo } from "../../data/movie-data";
+import { useSelector } from "react-redux";
 function Details() {
   const { id } = useParams();
   const [data, setData] = useState("");
   const [detail, setDetail] = useState("");
   const navigate = useNavigate();
+  const {uid}=useSelector((store)=>store.login)
+  
   
 
   useEffect(() => {
     MovieVideo(id, setData);
     MovieDetail(id, setDetail);
   }, []);
+if(!uid){
+return(<Navigate to="/login" />)
 
+}
+else{
   return (
     <div>
       <DetailsContainer>
@@ -61,7 +68,7 @@ function Details() {
         </main>
       </DetailsContainer>
     </div>
-  );
+  );}
 }
 
 export default Details;

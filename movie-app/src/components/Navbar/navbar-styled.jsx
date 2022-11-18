@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 export const NavbarContainer = styled.div`
@@ -18,4 +19,21 @@ export const LoginContainer = styled.div`
   }
   display: flex;
   gap: 2rem;
+`;
+export const Links = styled(Link)`
+  color: white;
+  text-decoration: none;
+  margin-left: 2rem;
+  font-size: 1.3rem;
+`;
+export const UserName = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  div {
+    font-size: 1.2rem;
+    span {
+      font-size: 1.3rem;
+    }
+  }
 `;

@@ -1,37 +1,48 @@
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { setLogout } from "../../app/features/loginSlice";
-import { LoginContainer, NavbarContainer } from "./navbar-styled";
+import {
+  Links,
+  LoginContainer,
+  NavbarContainer,
+  UserName,
+} from "./navbar-styled";
 
 function Navbar() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const page = useSelector((store) => store.pages);
   const user = useSelector((store) => store.login);
-  console.log(page.page);
+ 
   return (
     <div>
       <NavbarContainer>
         <h1 onClick={() => navigate("/")}>React Movie App</h1>
         <LoginContainer>
           {user.uid ? (
-            <div>
-              <div>{user.firstname + " " + user.lastname}</div>
+            <UserName>
+              <div>{`(` + user.firstname + " " + user.lastname + `)`}</div>
               <div
                 onClick={() => {
                   dispatch(setLogout());
                 }}
               >
-                LOGOUT
+                <span>LOGOUT</span>
               </div>
-            </div>
+            </UserName>
           ) : page.page === "login" ? (
-            <Link to="/register">REGİSTER</Link>
+            <div>
+              <Links to="/">HOME</Links>
+              <Links to="/register">REGİSTER</Links>
+            </div>
+          ) : page.page === "register" ? (
+            <div>
+              <Links to="/">HOME</Links>
+              <Links to="/login">LOGIN</Links>
+            </div>
           ) : (
-            <Link to="/login">LOGİN</Link>
+            <Links to="/login">LOGIN</Links>
           )}
-          {/* <div>LOGİN</div>
-          <div>REGİSTER</div> */}
         </LoginContainer>
       </NavbarContainer>
     </div>

@@ -1,13 +1,14 @@
 import { useState } from "react";
+import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { CardContainer, DetailCard, ImageContainer, NameDiv, RateCard } from "./card-styled"
 
 function Card({result}) {
   const [hover,setHover]=useState(false)
-  
+  const {uid} = useSelector((store)=>store.login)
 
   const navigate= useNavigate()
-console.log(result)
+
   return (
     <div>
       <CardContainer
@@ -17,7 +18,10 @@ console.log(result)
         onMouseOut={() => {
           setHover(false);
         }}
-        onClick={()=>navigate(`/details/${result.id}`)}
+        onClick={()=>{
+          uid?navigate(`/details/${result.id}`):navigate("/login")
+
+        }}
       >
         <ImageContainer>
           <img
@@ -26,7 +30,7 @@ console.log(result)
           />
         </ImageContainer>
         <DetailCard hover={hover}>
-          <h4>Overview</h4>
+          <h4>Overview  </h4>
           <p>{result.overview}</p>
         </DetailCard>
         <NameDiv>

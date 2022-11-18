@@ -18,7 +18,7 @@ function Home() {
     MovieData(setMovie, setError);
     
   }, [dispatch]);
-console.log(movie);
+
   return (
     <div>
       <HomeSearch>
