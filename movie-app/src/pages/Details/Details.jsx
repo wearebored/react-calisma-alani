@@ -19,7 +19,7 @@ function Details() {
   useEffect(() => {
     MovieVideo(id, setData);
     MovieDetail(id, setDetail);
-  }, []);
+  }, [id]);
   if (!uid) {
     return <Navigate to="/login" />;
   } else {
